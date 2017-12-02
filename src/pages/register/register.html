@@ -1,0 +1,94 @@
+<!--
+  Generated template for the RegisterPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Register</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+	<img src="http://cdn1-a.production.liputan6.static6.com/medias/875802/big/067921900_1431505957-20150512_084409.JPG"/>
+  <form #loginForm="ngForm" novalidate>
+		<ion-list >
+      <ion-item>
+				<ion-label floating><p>Nama</p></ion-label>
+				<ion-input [(ngModel)]="nama" name="name" type="text" #user="ngModel" spellcheck="false" autocapitalize="off"
+					required>
+				</ion-input>
+      </ion-item>
+      
+			<ion-item>
+				<ion-label floating><p>Email</p></ion-label>
+				<ion-input [(ngModel)]="email" name="email" type="email" #user="ngModel" spellcheck="false" autocapitalize="off"
+					required>
+				</ion-input>
+			</ion-item>
+			<!-- <p ion-text [hidden]="user.valid || submitted == false" color="danger" padding-left class="Warning">
+			Email harus diisi
+			</p> -->
+
+			<ion-item>
+				<ion-label floating><p>Password</p></ion-label>
+				
+				
+				<ion-input  [(ngModel)]="password" name="password" type="{{status}}" #pass="ngModel"  required>
+				</ion-input>
+      </ion-item>
+      
+      <ion-item>
+          <ion-label floating><p>Ketik Ulang Password</p></ion-label>
+          
+          
+          <ion-input  [(ngModel)]="password" name="password2" type="{{status}}" #pass="ngModel"  required>
+          </ion-input>
+        </ion-item>
+			
+			<!-- <p ion-text [hidden]="pass.valid || submitted == false" color="danger" padding-left class="Warning">
+				Password harus diisi
+			</p> -->
+		</ion-list>
+
+		<!--<ion-row responsive-sm>
+			<ion-col>
+				<button ion-button (click)="login(loginForm)" type="submit" block>Masuk</button>
+			</ion-col>
+		</ion-row>-->
+
+		<!--ini buat mock up-->
+		<ion-row>
+			<ion-col>
+				<button class="ButtonMasuk" ion-button color="AyoDermawan" (click)="register()" full><p class="ButtonWord">Daftar</p></button>
+			</ion-col>
+		</ion-row>
+
+<!--		
+		<div text-center>
+			<button ion-button medium>
+				Click Here
+			</button>
+		</div>
+				-->
+
+		<ion-grid>
+			<ion-row>
+				<ion-col text-center>
+					<p class="Head">
+						<font color="black">Sudah punya akun?</font>
+						<a class="Link" (click)="masuk()"> Masuk.</a>
+					</p>
+				</ion-col>
+			</ion-row>
+			<!--<ion-row>
+				<ion-col text-center><a><font color="black"></font><a (click)="lupaPassword()">Lupa password.</a></a></ion-col>
+			</ion-row>-->
+		</ion-grid>
+
+	</form>
+</ion-content>

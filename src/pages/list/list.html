@@ -1,0 +1,45 @@
+<!--
+  Generated template for the ListPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>List Produk</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-item>
+    <ion-label>Filter</ion-label>
+    <ion-select [(ngModel)]="jenis" multiple="true">
+      <ion-option>Bolu</ion-option>
+      <ion-option>Kering</ion-option>
+      <ion-option>Basah</ion-option>
+      <ion-option>Manis</ion-option>
+      <ion-option>Asin</ion-option>
+      <ion-option>Keju</ion-option>
+    </ion-select>
+  </ion-item>
+  <ion-row> 
+    <ion-col col-6 round (click)="detail()">
+        <img src="http://www.seafast.ipb.ac.id/images/stories/ilustrasi/muffin.jpg"/>
+        <h6>Roti Muffin Enak Cokelat</h6>
+        <h5>Rp59.000</h5>
+      </ion-col>
+      <ion-col col-6 round (click)="detail()">
+        <img src="http://www.seafast.ipb.ac.id/images/stories/ilustrasi/muffin.jpg"/>
+        <h6>Roti Muffin Enak Cokelat</h6>
+        <h5>Rp59.000</h5>
+      </ion-col>
+      <ion-col col-6 round (click)="detail()">
+        <img src="http://www.seafast.ipb.ac.id/images/stories/ilustrasi/muffin.jpg"/>
+        <h6>Roti Muffin Enak Cokelat</h6>
+        <h5>Rp59.000</h5>
+      </ion-col>
+  </ion-row>
+</ion-content>
