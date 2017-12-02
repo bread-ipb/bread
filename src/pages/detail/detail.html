@@ -24,13 +24,7 @@
 
 <ion-footer>
     <ion-toolbar color="light">
-        <ion-row>
-            <ion-col col-6>
-                <button ion-button full color="secondary" (click)="presentPrompt()">{{jumlahRoti}} buah</button>
-            </ion-col>
-            <ion-col col-6>
-                <button ion-button full (click)="masukKeranjang()">Beli</button>
-            </ion-col>
-        </ion-row>
+        <button class="jumlahRoti" ion-button full color="white" (click)="presentPrompt()">{{jumlahRoti}} buah</button>
+        <button ion-button full (click)="masukKeranjang()">Beli</button>
     </ion-toolbar>
   </ion-footer>

@@ -42,8 +42,11 @@ export class DetailPage {
         {
           text: 'Submit',
           handler: data => {
-            if(data.amount!=/([A-Z])\w+/g && data.amount>20 && data.amount<100){
-                this.jumlahRoti=data.amount;
+            if(data.amount==/([A-Z])\w+/g){
+                this.jumlahRoti=20;
+            }
+            else if(data.amount>20 && data.amount<=100){
+              this.jumlahRoti=data.amount;
             }
             else if(data.amount<20){
               this.jumlahRoti=20;
@@ -54,8 +57,7 @@ export class DetailPage {
               });
               alert.present();
             }
-            else{
-              console.log("lebihmasuk")
+            else if(data.amount>100){
               this.jumlahRoti=20;
               let alert = this.alertCtrl.create({
                 title: 'Pembelian Lebih dari Jumlah Maksimum!',
