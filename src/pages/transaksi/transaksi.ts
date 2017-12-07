@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { DetailTransaksiPage } from '../detail-transaksi/detail-transaksi';
 
 /**
  * Generated class for the TransaksiPage page.
@@ -20,5 +21,10 @@ export class TransaksiPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad TransaksiPage');
   }
+
+  detail(){
+  	this.navCtrl.push(DetailTransaksiPage);
+  }
+
 
 }

@@ -11,6 +11,7 @@ import { KeranjangPage } from '../pages/keranjang/keranjang';
 import { TransaksiPage } from '../pages/transaksi/transaksi';
 import { ProfilPage } from '../pages/profil/profil';
 import { TabsPage } from '../pages/tabs/tabs';
+import { DetailTransaksiPage } from '../pages/detail-transaksi/detail-transaksi';
 
 @Component({
   templateUrl: 'app.html'

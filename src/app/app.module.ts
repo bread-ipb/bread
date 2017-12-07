@@ -11,6 +11,7 @@ import { TransaksiPage } from '../pages/transaksi/transaksi';
 import { ProfilPage } from '../pages/profil/profil';
 import { TabsPage } from '../pages/tabs/tabs';
 import { DetailPage } from '../pages/detail/detail';
+import { DetailTransaksiPage } from '../pages/detail-transaksi/detail-transaksi';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -40,7 +41,8 @@ var config = {
     TabsPage,
     DetailPage,
     LoginPage,
-    RegisterPage
+    RegisterPage,
+    DetailTransaksiPage
   ],
   imports: [
     BrowserModule,
@@ -61,7 +63,8 @@ var config = {
     TabsPage,
     DetailPage,
     LoginPage,
-    RegisterPage
+    RegisterPage,
+    DetailTransaksiPage
   ],
   providers: [
     StatusBar,

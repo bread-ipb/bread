@@ -1,3 +1,9 @@
 page-transaksi {
+	.belumDibayar{
+		background-color: red;
+	}
 
+	.sudahDikirim{
+		background-color: green;
+	}	
 }
