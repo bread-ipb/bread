@@ -1,3 +1,4 @@
+import { PengirimanPage } from './../pages/pengiriman/pengiriman';
 import { DetailTransaksiPage } from './../pages/detail-transaksi/detail-transaksi';
 import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -20,6 +21,7 @@ import { AngularFireModule } from 'angularfire2';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { CartService } from '../providers/service-keranjang';
+import { PesananPage } from '../pages/pesanan/pesanan';
 
 
 
@@ -44,7 +46,9 @@ import { CartService } from '../providers/service-keranjang';
     DetailPage,
     LoginPage,
     RegisterPage,
-    DetailTransaksiPage
+    DetailTransaksiPage,
+    PengirimanPage,
+    PesananPage
   ],
   imports: [
     BrowserModule,
@@ -66,7 +70,9 @@ import { CartService } from '../providers/service-keranjang';
     DetailPage,
     LoginPage,
     RegisterPage,
-    DetailTransaksiPage
+    DetailTransaksiPage,
+    PengirimanPage,
+    PesananPage
   ],
   providers: [
     StatusBar,

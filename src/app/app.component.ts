@@ -12,6 +12,8 @@ import { TransaksiPage } from '../pages/transaksi/transaksi';
 import { ProfilPage } from '../pages/profil/profil';
 import { TabsPage } from '../pages/tabs/tabs';
 import { CartService } from '../providers/service-keranjang';
+import { PengirimanPage } from './../pages/pengiriman/pengiriman';
+import { PesananPage } from '../pages/pesanan/pesanan';
 
 @Component({
   templateUrl: 'app.html'

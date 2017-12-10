@@ -1,3 +1,4 @@
+import { PengirimanPage } from './../pengiriman/pengiriman';
 import { CartService } from './../../providers/service-keranjang';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
@@ -16,8 +17,10 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 export class KeranjangPage {
   items=[];
   total=0;
+  pengiriman:any;
   constructor(public navCtrl: NavController, public navParams: NavParams,public cart:CartService) {
     this.items=this.cart.cartitem;
+    this.pengiriman=PengirimanPage;
     for(var i=0;i<this.items.length;i++){
         
         var produk = this.items[i];
@@ -25,6 +28,7 @@ export class KeranjangPage {
     }
 
   }
+  
  
   ionViewDidLoad() {
     console.log(this.total);

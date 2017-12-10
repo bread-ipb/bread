@@ -27972,24 +27972,8 @@ ion-navbar.toolbar {
   min-height: calc(46px + env(safe-area-inset-bottom));
 }
 
-page-detail .jumlahRoti {
-  background-color: white;
-  color: black;
-  border-bottom: 2px solid gray;
-}
-
 page-detail-transaksi .belumDibayar {
   background-color: red;
-}
-
-page-keranjang .gambarItem {
-  width: 65px;
-  height: 75px;
-}
-
-page-profil .foto {
-  height: 35px;
-  width: 60px;
 }
 
 page-tabs #underscore {
