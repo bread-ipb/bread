@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { Component,ViewChild } from '@angular/core';
+import { IonicPage, NavController, NavParams,AlertController} from 'ionic-angular';
+import { AngularFireAuth } from 'angularfire2/auth';
 import { TabsPage } from '../tabs/tabs'
 import { LoginPage } from '../login/login'
 
@@ -15,16 +16,40 @@ import { LoginPage } from '../login/login'
   templateUrl: 'register.html',
 })
 export class RegisterPage {
+  @ViewChild('username') user;
+  @ViewChild('password') passwd;
   status:string;
   lihat = true;
   status2:string;
   lihat2 = true;
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(private alertCtrl: AlertController,private fire:AngularFireAuth,public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad RegisterPage');
   }
+  alert(message: string) {
+    this.alertCtrl.create({
+      title: 'Info!',
+      subTitle: message,
+      buttons: ['OK']
+    }).present();
+  }
+  reg(){
+  this.fire.auth.createUserWithEmailAndPassword(this.user.value,this.passwd.value)
+    .then(data => {
+      console.log('got data ', data);
+      this.alert('Registered!');
+
+    })
+    .catch(error => {
+      console.log('got an error ', error);
+      this.alert(error.message);
+    });
+    console.log('Would Register with',this.user.value,this.passwd.value);
+  }
+
+}
 
   // showPassword(){
   //   this.status = "text";
@@ -49,13 +74,3 @@ export class RegisterPage {
   //   this.lihat2 = true;
   //   console.log(this.status2);
   // }
-
-  register(){
-    this.navCtrl.setRoot(TabsPage);
-  }
-
-  masuk(){
-    this.navCtrl.setRoot(LoginPage);
-  }
-
-}

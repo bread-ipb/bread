@@ -16,37 +16,33 @@
 <ion-content padding>
 	<img src="http://cdn1-a.production.liputan6.static6.com/medias/875802/big/067921900_1431505957-20150512_084409.JPG"/>
   <form #loginForm="ngForm" novalidate>
-		<ion-list >
+<ion-list >
       <ion-item>
 				<ion-label floating><p>Nama</p></ion-label>
-				<ion-input [(ngModel)]="nama" name="name" type="text" #user="ngModel" spellcheck="false" autocapitalize="off"
+				<ion-input [name="name" type="text" #username spellcheck="false" autocapitalize="off"
 					required>
 				</ion-input>
       </ion-item>
-      
-			<ion-item>
-				<ion-label floating><p>Email</p></ion-label>
-				<ion-input [(ngModel)]="email" name="email" type="email" #user="ngModel" spellcheck="false" autocapitalize="off"
-					required>
-				</ion-input>
-			</ion-item>
-			<!-- <p ion-text [hidden]="user.valid || submitted == false" color="danger" padding-left class="Warning">
-			Email harus diisi
-			</p> -->
-
-			<ion-item>
-				<ion-label floating><p>Password</p></ion-label>
-				
-				
-				<ion-input  [(ngModel)]="password" name="password" type="{{status}}" #pass="ngModel"  required>
-				</ion-input>
-      </ion-item>
+      <ion-list>
+		
+		  <ion-item>
+			<ion-label floating>Username</ion-label>
+			<ion-input type="text" #username></ion-input>
+		  </ion-item>
+		
+		  <ion-item>
+			<ion-label floating>Password</ion-label>
+			<ion-input type="password" #password></ion-input>
+		  </ion-item>
+		
+		</ion-list>
+			
       
       <ion-item>
           <ion-label floating><p>Ketik Ulang Password</p></ion-label>
           
           
-          <ion-input  [(ngModel)]="password" name="password2" type="{{status}}" #pass="ngModel"  required>
+          <ion-input  [name="password2" type="password" #password2 required>
           </ion-input>
         </ion-item>
 			
@@ -64,7 +60,7 @@
 		<!--ini buat mock up-->
 		<ion-row>
 			<ion-col>
-				<button class="ButtonMasuk" ion-button color="AyoDermawan" (click)="register()" full><p class="ButtonWord">Daftar</p></button>
+				<button block ion-button color="primary" (click)="reg()">Register</button>
 			</ion-col>
 		</ion-row>
 

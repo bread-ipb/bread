@@ -1,3 +1,4 @@
+import { CartService } from './../../providers/service-keranjang';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
@@ -13,12 +14,20 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'keranjang.html',
 })
 export class KeranjangPage {
+  items=[];
+  total=0;
+  constructor(public navCtrl: NavController, public navParams: NavParams,public cart:CartService) {
+    this.items=this.cart.cartitem;
+    for(var i=0;i<this.items.length;i++){
+        
+        var produk = this.items[i];
+        this.total +=produk.total;
+    }
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
-
+ 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad KeranjangPage');
+    console.log(this.total);
   }
 
 }

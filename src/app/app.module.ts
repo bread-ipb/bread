@@ -1,3 +1,4 @@
+import { DetailTransaksiPage } from './../pages/detail-transaksi/detail-transaksi';
 import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
@@ -11,7 +12,6 @@ import { TransaksiPage } from '../pages/transaksi/transaksi';
 import { ProfilPage } from '../pages/profil/profil';
 import { TabsPage } from '../pages/tabs/tabs';
 import { DetailPage } from '../pages/detail/detail';
-import { DetailTransaksiPage } from '../pages/detail-transaksi/detail-transaksi';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -19,16 +19,18 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { CartService } from '../providers/service-keranjang';
 
 
-var config = {
-  apiKey: "AIzaSyCbAHcZ93Z4TmqQUO83tUqMnpHnP8yT7Ik",
-  authDomain: "bread-ipb-tes.firebaseapp.com",
-  databaseURL: "https://bread-ipb-tes.firebaseio.com",
-  projectId: "bread-ipb-tes",
-  storageBucket: "bread-ipb-tes.appspot.com",
-  messagingSenderId: "279879616076"
-};
+
+    const config= {
+        apiKey: "AIzaSyD1YKYgoywKMAXcIrXPMt7QmRMCQdL3fr0",
+        authDomain: "meong-8704a.firebaseapp.com",
+        databaseURL: "https://meong-8704a.firebaseio.com",
+        projectId: "meong-8704a",
+        storageBucket: "",
+        messagingSenderId: "97474052902"
+    };
 
 @NgModule({
   declarations: [
@@ -69,6 +71,7 @@ var config = {
   providers: [
     StatusBar,
     SplashScreen,
+    CartService,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

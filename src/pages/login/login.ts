@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
+import { Component,ViewChild } from '@angular/core';
+import { IonicPage, NavController, NavParams,AlertController} from 'ionic-angular';
+import { AngularFireAuth } from 'angularfire2/auth';
 import { TabsPage } from '../tabs/tabs';
 import { RegisterPage } from '../register/register';
 
@@ -22,15 +22,10 @@ import { RegisterPage } from '../register/register';
 export class LoginPage {
   status:string;
   lihat = true;
-  constructor(
-    // private fireauth: AngularFireAuth,
-    // private firedata: AngularFireDatabase,
-    public navCtrl: NavController, 
-    public navParams: NavParams
-
-  ) {
+  constructor(private fire:AngularFireAuth,public navCtrl: NavController, public navParams: NavParams,public alertCtrl: AlertController) {
   }
-
+  @ViewChild('username') uname;
+  @ViewChild('password') password;
   ionViewDidLoad() {
     console.log('ionViewDidLoad LoginPage');
   }
@@ -46,8 +41,27 @@ export class LoginPage {
     this.lihat = true;
     console.log(this.status);
   }
+  alert(message: string) {
+    this.alertCtrl.create({
+      title: 'Info!',
+      subTitle: message,
+      buttons: ['OK']
+    }).present();
+  }
 
   masuk(){
+    this.fire.auth.signInWithEmailAndPassword(this.uname.value,this.password.value)
+    .then( data => {
+      console.log('got some data', this.fire.auth.currentUser);
+      this.alert('Success! You\'re logged in');
+      //this.navCtrl.setRoot( LoggedinPage );
+      // user is logged in
+    })
+    .catch( error => {
+      console.log('got an error', error);
+      this.alert(error.message);
+    })
+    console.log('Would sign in with ', this.uname.value, this.password.value);
     this.navCtrl.setRoot(TabsPage);
   }
 

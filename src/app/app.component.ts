@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-
+import { DetailTransaksiPage } from './../pages/detail-transaksi/detail-transaksi';
 import { LoginPage } from '../pages/login/login';
 import { RegisterPage } from '../pages/register/register';
 import { HomePage } from '../pages/home/home';
@@ -11,7 +11,7 @@ import { KeranjangPage } from '../pages/keranjang/keranjang';
 import { TransaksiPage } from '../pages/transaksi/transaksi';
 import { ProfilPage } from '../pages/profil/profil';
 import { TabsPage } from '../pages/tabs/tabs';
-import { DetailTransaksiPage } from '../pages/detail-transaksi/detail-transaksi';
+import { CartService } from '../providers/service-keranjang';
 
 @Component({
   templateUrl: 'app.html'

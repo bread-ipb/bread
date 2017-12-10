@@ -1,3 +1,4 @@
+import { CartService } from './../../providers/service-keranjang';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
 import { KeranjangPage } from '../keranjang/keranjang';
@@ -13,13 +14,19 @@ import { KeranjangPage } from '../keranjang/keranjang';
   selector: 'page-detail',
   templateUrl: 'detail.html',
 })
+
 export class DetailPage {
+  item:any;
   jumlahRoti=20;
-  constructor(private alertCtrl: AlertController, public navCtrl: NavController, public navParams: NavParams) {
+  idRoti=1;
+  quantity:any;
+  id:any;
+  total:any;
+  constructor(private alertCtrl: AlertController, public navCtrl: NavController, public navParams: NavParams,public cart:CartService) {
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad DetailPage');
+  ionViewWillLoad() {
+    this.item=this.navParams.get('items');
   }
 
   presentPrompt() {
@@ -42,11 +49,8 @@ export class DetailPage {
         {
           text: 'Submit',
           handler: data => {
-            if(data.amount==/([A-Z])\w+/g){
-                this.jumlahRoti=20;
-            }
-            else if(data.amount>20 && data.amount<=100){
-              this.jumlahRoti=data.amount;
+            if(data.amount!=/([A-Z])\w+/g && data.amount>20 && data.amount<100){
+                this.jumlahRoti=data.amount;
             }
             else if(data.amount<20){
               this.jumlahRoti=20;
@@ -57,7 +61,8 @@ export class DetailPage {
               });
               alert.present();
             }
-            else if(data.amount>100){
+            else{
+              console.log("lebihmasuk")
               this.jumlahRoti=20;
               let alert = this.alertCtrl.create({
                 title: 'Pembelian Lebih dari Jumlah Maksimum!',
@@ -80,11 +85,14 @@ export class DetailPage {
   }
 
   masukKeranjang(){
+    this.cart.cartitem.push({quantity:this.jumlahRoti,name:this.item.namaBarang,total:this.item.hargaBarang*this.jumlahRoti});
+    console.log(this.cart.cartitem);
     this.navCtrl.push(KeranjangPage);
     let alert = this.alertCtrl.create({
       title: 'Pembelian Berhasil Masuk Keranjang!',
       subTitle: 'Selesaikan pembayaran agar barang segera dikirim.',
       buttons: ['OK']
+      
     });
     alert.present();
   }
