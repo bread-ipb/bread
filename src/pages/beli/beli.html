@@ -1,0 +1,39 @@
+<!--
+  Generated template for the BeliPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Detail Order</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+<form #beliForm="ngForm" novalidate>
+  <ion-item>
+    <ion-label floating>Quantity</ion-label>
+    <ion-input [(ngModel)]="quantity" name="qty" type="number" #qty="ngModel" spellcheck="false" autocapitalize="off" required></ion-input>
+  </ion-item>
+
+  <p ion-text [hidden]="!qty.valid" color="danger" *ngIf="quantity<20 || quantity>50" padding-left>
+    Quantity minimal 20, maksimal 50 
+  </p>
+
+  <ion-item>
+    <ion-label floating>Tanggal Pengiriman</ion-label>
+    <ion-datetime displayFormat="DDDD, DD MMMM YYYY" type="string" [(ngModel)]="tanggal" name="date" #date="ngModel" spellcheck="false" autocapitalize="off" required></ion-datetime>
+  </ion-item>
+
+  <ion-item>
+    <ion-label floating>Batas Waktu Pengiriman</ion-label>
+    <ion-datetime displayFormat="HH.mm WIB" type="string" [(ngModel)]="waktu" name="time" #time="ngModel" spellcheck="false" autocapitalize="off" required></ion-datetime>
+  </ion-item>
+
+  <button ion-button [disabled]="!qty.valid || !date.valid || !time.valid || quantity<20 || quantity>50" full (click)="beli(beliForm)" type="submit">Beli</button>
+</form>
+</ion-content>
