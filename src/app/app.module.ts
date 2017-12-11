@@ -22,6 +22,7 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { CartService } from '../providers/service-keranjang';
 import { PesananPage } from '../pages/pesanan/pesanan';
+import { BeliPage } from '../pages/beli/beli';
 
 
 
@@ -48,7 +49,8 @@ import { PesananPage } from '../pages/pesanan/pesanan';
     RegisterPage,
     DetailTransaksiPage,
     PengirimanPage,
-    PesananPage
+    PesananPage,
+    BeliPage
   ],
   imports: [
     BrowserModule,
@@ -72,7 +74,8 @@ import { PesananPage } from '../pages/pesanan/pesanan';
     RegisterPage,
     DetailTransaksiPage,
     PengirimanPage,
-    PesananPage
+    PesananPage,
+    BeliPage
   ],
   providers: [
     StatusBar,

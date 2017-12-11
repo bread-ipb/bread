@@ -3,6 +3,8 @@ import { IonicPage, NavController, NavParams,AlertController} from 'ionic-angula
 import { AngularFireAuth } from 'angularfire2/auth';
 import { TabsPage } from '../tabs/tabs'
 import { LoginPage } from '../login/login'
+import { AngularFireDatabase } from 'angularfire2/database';
+import { NgForm } from '@angular/forms/src/directives/ng_form';
 
 /**
  * Generated class for the RegisterPage page.
@@ -16,13 +18,16 @@ import { LoginPage } from '../login/login'
   templateUrl: 'register.html',
 })
 export class RegisterPage {
-  @ViewChild('username') user;
-  @ViewChild('password') passwd;
-  status:string;
-  lihat = true;
-  status2:string;
-  lihat2 = true;
-  constructor(private alertCtrl: AlertController,private fire:AngularFireAuth,public navCtrl: NavController, public navParams: NavParams) {
+  // @ViewChild('name') name;
+  // @ViewChild('username') user;
+  // @ViewChild('password') passwd;
+  name:string;
+  email:string;
+  password:string;
+  telepon:number;
+  submitted=false;
+
+  constructor(public db : AngularFireDatabase, private alertCtrl: AlertController,private fire:AngularFireAuth,public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
@@ -35,18 +40,35 @@ export class RegisterPage {
       buttons: ['OK']
     }).present();
   }
-  reg(){
-  this.fire.auth.createUserWithEmailAndPassword(this.user.value,this.passwd.value)
-    .then(data => {
-      console.log('got data ', data);
-      this.alert('Registered!');
+  reg(form: NgForm){
+    this.submitted=true;
+    if(form.valid){
+    this.fire.auth.createUserWithEmailAndPassword(this.email,this.password)
+      .then(data => {
+        console.log('got data ', data);
+        console.log(this.email);
+        this.db.object('/user/'+data.uid).set({
+          id : data.uid,
+          name : this.name,
+          username : this.email,
+          telepon : this.telepon
+        })
+        console.log(data);
+        this.alert('Registered!');
+        this.navCtrl.setRoot(LoginPage);
+      })
+        .catch(error => {
+        console.log('got an error ', error);
+        this.alert(error.message);
+      });
+  }
+  else{
 
-    })
-    .catch(error => {
-      console.log('got an error ', error);
-      this.alert(error.message);
-    });
-    console.log('Would Register with',this.user.value,this.passwd.value);
+  }
+  }
+
+  masuk(){
+    this.navCtrl.setRoot(LoginPage);
   }
 
 }

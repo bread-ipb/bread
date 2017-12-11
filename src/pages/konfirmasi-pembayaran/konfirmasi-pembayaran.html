@@ -1,0 +1,58 @@
+<!--
+  Generated template for the KonfirmasiPembayaranPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>konfirmasi-pembayaran</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+<form #konfirmForm="ngForm" novalidate>
+
+  <ion-item>
+    <ion-label floating>Nama Pengirim</ion-label>
+    <ion-input [(ngModel)]="nama" name="namaPengirim" type="text" #namaPengirim="ngModel" required></ion-input>
+  </ion-item>
+  
+  <ion-item>
+    <ion-label floating>No. Rekening</ion-label>
+    <ion-input [(ngModel)]="rekening" name="norek" type="number" #norek="ngModel" required></ion-input>
+  </ion-item>
+
+  <ion-list radio-group>
+    <ion-list-header>
+      Bank
+    </ion-list-header>
+  
+    <ion-item>
+      <ion-label>BCA</ion-label>
+      <ion-radio  value="bca"></ion-radio>
+    </ion-item>
+  
+    <ion-item>
+      <ion-label>BNI</ion-label>
+      <ion-radio value="bni"></ion-radio>
+    </ion-item>
+  
+    <ion-item>
+      <ion-label>BRI</ion-label>
+      <ion-radio value="bri" ></ion-radio>
+    </ion-item>
+  </ion-list>
+
+    <ion-item>
+      <ion-label floating>Tanggal Pembayaran</ion-label>
+      <ion-datetime displayFormat="DDDD, DD MMMM YYYY" type="string" [(ngModel)]="tanggal" name="date" #date="ngModel" spellcheck="false" autocapitalize="off" required></ion-datetime>
+    </ion-item>
+
+    <button ion-button [disabled]="!qty.valid || !date.valid || !time.valid" full (click)="beli(beliForm)" type="submit">Beli</button>
+  </form>
+  
+</ion-content>

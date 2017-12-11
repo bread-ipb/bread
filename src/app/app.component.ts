@@ -14,6 +14,7 @@ import { TabsPage } from '../pages/tabs/tabs';
 import { CartService } from '../providers/service-keranjang';
 import { PengirimanPage } from './../pages/pengiriman/pengiriman';
 import { PesananPage } from '../pages/pesanan/pesanan';
+import { BeliPage } from '../pages/beli/beli';
 
 @Component({
   templateUrl: 'app.html'
