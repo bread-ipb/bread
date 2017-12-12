@@ -14,31 +14,31 @@
 
 
 <ion-content padding>
-	<ion-item (click)="detail()">
-        <ion-thumbnail item-start>
+	<ion-item>
+        <ion-thumbnail item-start (click)="detail()">
           <img src="http://www.seafast.ipb.ac.id/images/stories/ilustrasi/muffin.jpg" height="60" width="65"/>
         </ion-thumbnail>
 	        <h5>Roti Muffin Enak Cokelat</h5>
 	        <p>Rp 59.000<br><ion-badge class="belumDibayar">Belum dibayar</ion-badge></p>
     </ion-item>
-    <ion-item (click)="detail()">
-        <ion-thumbnail item-start>
+    <ion-item>
+        <ion-thumbnail item-start (click)="detail()">
            <img src="http://www.seafast.ipb.ac.id/images/stories/ilustrasi/muffin.jpg" height="60" width="65"/>
         </ion-thumbnail>
 	        <h5>Roti Muffin Enak Cokelat</h5>
 	        <p>Rp 35.000<br><ion-badge>Sedang dikirim</ion-badge></p>
 	</ion-item>
-	<ion-item (click)="detail()">
-        <ion-thumbnail item-start>
+	<ion-item>
+        <ion-thumbnail item-start (click)="detail()">
            <img src="http://www.seafast.ipb.ac.id/images/stories/ilustrasi/muffin.jpg" height="60" width="65"/>
         </ion-thumbnail>
 	        <h5>Roti Muffin Enak Cokelat</h5>
 	        <p>Rp 40.000<br><ion-badge class="sudahDikirim">Sudah dikirim</ion-badge></p>
   </ion-item>
   <ion-row>
-    <ion-col col-6 round *ngFor="let item of transaksi"><!--item variabel untuk ambil isi dari array items yang ada di add-item.ts -->
+    <ion-col col-6 round *ngFor="let item of transaksi" [navPush]="DetailTransaksiPage" [navParams]="{detailtrans:item.$key}">
       <img src="http://www.seafast.ipb.ac.id/images/stories/ilustrasi/muffin.jpg"/>
-      <h6>{{ item.namaBarang }}</h6> <h5>{{ item.hargaBarang }}</h5>
+      <h6>{{ item.pembayaran }}</h6> <h5>{{ item.total }}</h5>
     </ion-col>
   </ion-row>
 </ion-content>

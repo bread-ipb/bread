@@ -15,60 +15,40 @@
 
 <ion-content padding>
 	<img src="http://cdn1-a.production.liputan6.static6.com/medias/875802/big/067921900_1431505957-20150512_084409.JPG"/>
-  <form #registerForm="ngForm" novalidate>
+  <form #loginForm="ngForm" novalidate>
 <ion-list >
       <ion-item>
-				<ion-label floating>Nama</ion-label>
-				<ion-input [(ngModel)]="name" name="name" type="text" #nama="ngModel" spellcheck="false" autocapitalize="off"
+				<ion-label floating><p>Nama</p></ion-label>
+				<ion-input [name="name" type="text" #username spellcheck="false" autocapitalize="off"
 					required>
 				</ion-input>
-			</ion-item>
-		
-			<p ion-text [hidden]="nama.valid || submitted==false" color="danger" padding-left class="Warning">
-				Nama harus diisi.
-			</p>
-
-			<ion-item>
-				<ion-label floating>Telepon</ion-label>					
-				<ion-input [(ngModel)]="telepon" name="telepon" type="number" minlength="11" maxlength="12" #telp="ngModel" spellcheck="false" autocapitalize="off"
-						required>
-				</ion-input>
-			</ion-item>
-
-			<p ion-text [hidden]="telp.valid || submitted==false" color="danger" padding-left class="Warning">
-				Nomor telepon harus diisi.
-			</p>
+      </ion-item>
+      <ion-list>
 		
 		  <ion-item>
-			<ion-label floating>Email</ion-label>
-			<ion-input [(ngModel)]="email" name="email" type="text" #mail="ngModel" required></ion-input>
-			</ion-item>
-			
-			<p ion-text [hidden]="mail.valid || submitted==false" color="danger" padding-left class="Warning">
-					Email harus diisi.
-			</p>
+			<ion-label floating>Username</ion-label>
+			<ion-input type="text" #username></ion-input>
+		  </ion-item>
 		
 		  <ion-item>
 			<ion-label floating>Password</ion-label>
-			<ion-input [(ngModel)]="password" name="password" type="password" #passwd="ngModel" required></ion-input>
-			</ion-item>
+			<ion-input type="password" #password></ion-input>
+		  </ion-item>
+		
+		</ion-list>
 			
-			<p ion-text [hidden]="passwd.valid || submitted==false" color="danger" padding-left class="Warning">
-					Password harus diisi.
-			</p>
-		  
+      
       <ion-item>
-      <ion-label floating>Ketik Ulang Password</ion-label>
-			<ion-input [(ngModel)]="password2" name="password2" type="password" #passwd2="ngModel" required></ion-input>
-      </ion-item>
+          <ion-label floating><p>Ketik Ulang Password</p></ion-label>
+          
+          
+          <ion-input  [name="password2" type="password" #password2 required>
+          </ion-input>
+        </ion-item>
 			
-			<p ion-text [hidden]="passwd2.valid || submitted==false" color="danger" padding-left class="Warning">
-					Harus diisi.
-			</p>
-
-			<p ion-text [hidden]="!passwd.valid || !passwd2.valid || password==password2" color="danger" padding-left class="Warning">
-				Password tidak cocok, coba lagi.
-			</p>
+			<!-- <p ion-text [hidden]="pass.valid || submitted == false" color="danger" padding-left class="Warning">
+				Password harus diisi
+			</p> -->
 		</ion-list>
 
 		<!--<ion-row responsive-sm>
@@ -80,7 +60,7 @@
 		<!--ini buat mock up-->
 		<ion-row>
 			<ion-col>
-				<button block ion-button color="primary" type="submit" (click)="reg(registerForm)">Register</button>
+				<button block ion-button color="primary" (click)="reg()">Register</button>
 			</ion-col>
 		</ion-row>
 

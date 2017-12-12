@@ -2,7 +2,6 @@ import { CartService } from './../../providers/service-keranjang';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
 import { KeranjangPage } from '../keranjang/keranjang';
-import { BeliPage } from '../beli/beli';
 
 /**
  * Generated class for the DetailPage page.
@@ -30,8 +29,59 @@ export class DetailPage {
     this.item=this.navParams.get('items');
   }
 
-  beli(){
-    this.navCtrl.push(BeliPage);
+  presentPrompt() {
+    let alert = this.alertCtrl.create({
+      title: 'Jumlah Pembelian',
+      inputs: [
+        {
+          name: 'amount',
+          placeholder: this.jumlahRoti+' buah'
+        }
+      ],
+      buttons: [
+        {
+          text: 'Cancel',
+          role: 'cancel',
+          handler: data => {
+            console.log('Cancel clicked');
+          }
+        },
+        {
+          text: 'Submit',
+          handler: data => {
+            if(data.amount!=/([A-Z])\w+/g && data.amount>20 && data.amount<100){
+                this.jumlahRoti=data.amount;
+            }
+            else if(data.amount<20){
+              this.jumlahRoti=20;
+              let alert = this.alertCtrl.create({
+                title: 'Pembelian Kurang dari Jumlah Minimum!',
+                subTitle: 'Pembelian roti minimum menggunakan aplikasi ini adalah 20 buah.',
+                buttons: ['OK']
+              });
+              alert.present();
+            }
+            else{
+              console.log("lebihmasuk")
+              this.jumlahRoti=20;
+              let alert = this.alertCtrl.create({
+                title: 'Pembelian Lebih dari Jumlah Maksimum!',
+                subTitle: 'Pembelian roti maksimum menggunakan aplikasi ini adalah 100 buah.',
+                buttons: ['OK']
+              });
+              alert.present();
+            }
+            // if (User.isValid(data.username, data.password)) {
+            //   // logged in!
+            // } else {
+            //   // invalid login
+            //   return false;
+            // }
+          }
+        }
+      ]
+    });
+    alert.present();
   }
 
   masukKeranjang(){

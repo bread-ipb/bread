@@ -4,7 +4,6 @@ import { DetailTransaksiPage } from '../detail-transaksi/detail-transaksi';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { AngularFireDatabase,FirebaseListObservable } from 'angularfire2/database';
 import { CartService } from './../../providers/service-keranjang';
-import { PesananPage } from '../pesanan/pesanan';
 
 /**
  * Generated class for the TransaksiPage page.
@@ -20,11 +19,12 @@ import { PesananPage } from '../pesanan/pesanan';
 export class TransaksiPage {
   DetailTransaksiPage:any;
   transaksi:any;
-  
+  items=[];
+  detailtrans:any;
   constructor(public navCtrl: NavController,private fireauth: AngularFireAuth,public db:AngularFireDatabase, public cart:CartService, public navParams: NavParams) {
     this.DetailTransaksiPage=DetailTransaksiPage;
-    var user = this.fireauth.auth.currentUser;
-    this.db.list('/item/'+user.uid).subscribe(data => {
+    var user = this.fireauth.auth.currentUser; 
+    this.db.list('/transaksi'+user.uid).subscribe(data => {
       this.transaksi=data;
       console.log(this.transaksi);        
     });
