@@ -18,10 +18,16 @@
     <h6>{{item.namaBarang}}</h6>
     <h5>{{item.hargaBarang}}</h5>
     <p>Bahan: Tepung, telur, gula, mentega.</p>
+    
+    
 </ion-content>
 
 <ion-footer>
     <ion-toolbar color="light">
-        <button ion-button full (click)="beli()">Beli</button>
+        <ion-row>
+
+                <button ion-button full [navPush]="beliPage" [navParams]="{items:item}">Beli</button>
+
+        </ion-row>
     </ion-toolbar>
-</ion-footer>
+  </ion-footer>

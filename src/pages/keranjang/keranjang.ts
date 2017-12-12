@@ -33,5 +33,9 @@ export class KeranjangPage {
   ionViewDidLoad() {
     console.log(this.total);
   }
-
+  removeitem(item){
+    var index=this.items.indexOf(item);
+    this.items.splice(index,1);
+    console.log(this.items)
+  }
 }

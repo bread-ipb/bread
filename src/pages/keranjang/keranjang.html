@@ -12,32 +12,24 @@
 
 
 <ion-content padding>
-  <ion-list>
+  <!--<ion-list>
     <ion-item *ngFor="let item of items">
       {{item.name}}
       {{item.quantity}}
       {{item.total}}
     </ion-item>
     <ion-item>{{total}}</ion-item>
-  </ion-list>
+  </ion-list>-->
 
-  <ion-item>
+  <ion-item *ngFor="let item of items">
       <ion-thumbnail item-start>
         <img src="http://www.seafast.ipb.ac.id/images/stories/ilustrasi/muffin.jpg" height="60" width="65"/>
       </ion-thumbnail>
-        <h5>Roti Muffin Enak Cokelat</h5>
-        <p>Rp 59.000</p>
-        <ion-col><ion-badge><ion-icon ios="ios-trash" md="md-trash"></ion-icon></ion-badge></ion-col>
+        <h5>{{item.name}}<br>{{item.quantity}} Pcs</h5>
+        <p>{{item.total}}</p>
+        <ion-col><ion-badge (click)="removeitem(item)" ><ion-icon ios="ios-trash" md="md-trash"></ion-icon></ion-badge></ion-col>
   </ion-item>
 
-  <ion-item>
-    <ion-thumbnail item-start>
-       <img src="http://www.seafast.ipb.ac.id/images/stories/ilustrasi/muffin.jpg" height="60" width="65"/>
-    </ion-thumbnail>
-      <h5>Roti Muffin Enak Cokelat</h5>
-      <p>Rp 35.000</p>
-      <ion-col><ion-badge><ion-icon ios="ios-trash" md="md-trash"></ion-icon></ion-badge></ion-col>
-  </ion-item>
 </ion-content>
 
 <ion-footer>

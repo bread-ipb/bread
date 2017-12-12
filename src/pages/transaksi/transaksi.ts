@@ -4,7 +4,6 @@ import { DetailTransaksiPage } from '../detail-transaksi/detail-transaksi';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { AngularFireDatabase,FirebaseListObservable } from 'angularfire2/database';
 import { CartService } from './../../providers/service-keranjang';
-import { PesananPage } from '../pesanan/pesanan';
 
 /**
  * Generated class for the TransaksiPage page.
@@ -19,16 +18,32 @@ import { PesananPage } from '../pesanan/pesanan';
 })
 export class TransaksiPage {
   DetailTransaksiPage:any;
-  transaksi:any;
-  
+  transaksi:any = [];
+  items=[];
+  itemku:any;
+  detailtrans:any;
+  classbadge:string;
   constructor(public navCtrl: NavController,private fireauth: AngularFireAuth,public db:AngularFireDatabase, public cart:CartService, public navParams: NavParams) {
     this.DetailTransaksiPage=DetailTransaksiPage;
     var user = this.fireauth.auth.currentUser;
-    this.db.list('/item/'+user.uid).subscribe(data => {
-      this.transaksi=data;
-      console.log(this.transaksi);        
+    this.db.list('/transaksi/').subscribe(data => {
+      for(var i=0, j=0;i<data.length;i++)
+      {
+        if(data[i].punyauser==user.uid)
+        {
+          this.transaksi[j]=data[i];
+          j++
+        }
+      } 
+      var key=user.uid;
+      console.log(this.transaksi); 
+      console.log(this.transaksi.key); 
+      if(this.transaksi.status==0){
+        this.classbadge='belumDibayar';
+      }       
     });
   }
+
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad TransaksiPage');

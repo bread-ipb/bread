@@ -3,7 +3,8 @@ import { IonicPage, NavController, NavParams,AlertController } from 'ionic-angul
 import { DetailPage } from '../detail/detail';
 import { NgForm } from '@angular/forms';
 import { Http } from '@angular/http';
-
+import { CartService } from '../../providers/service-keranjang';
+import { KeranjangPage } from '../keranjang/keranjang';
 
 
 /**
@@ -24,8 +25,8 @@ export class BeliPage {
   quantity:number;
   tanggal:string;
   waktu:string;
-
-  constructor(public navCtrl: NavController, public navParams: NavParams,public alertCtrl: AlertController) {
+  item:any;
+  constructor(public cart:CartService,public navCtrl: NavController, public navParams: NavParams,public alertCtrl: AlertController) {
   
   }
   
@@ -34,7 +35,9 @@ export class BeliPage {
   // @ViewChild('myTime') time;
 
   ionViewDidLoad() {
+    this.item=this.navParams.get('items');
     console.log('ionViewDidLoad BeliPage');
+    console.log(this.item);
   }
   alert(message: string) {
     this.alertCtrl.create({
@@ -44,14 +47,23 @@ export class BeliPage {
     }).present();
   }
   beli(form: NgForm){
-      console.log(this.quantity);
+      this.cart.cartitem.push({name:this.item.namaBarang,quantity:this.quantity,total:this.item.hargaBarang*this.quantity,tanggal:this.tanggal,waktu:this.waktu});
+      console.log(this.cart.cartitem);
+      let alert = this.alertCtrl.create({
+        title: 'Pembelian Berhasil Masuk Keranjang!',
+        subTitle: 'Selesaikan pembayaran agar barang segera dikirim.',
+        buttons: ['OK']
+        
+      });
+      alert.present();
+      console.log(this.cart.cartitem);
       console.log(this.tanggal);
       console.log(this.waktu);
       this.navCtrl.pop();
-      this.alert('Order telah masuk keranjang');  
+      
   }
   
-    
+  
     
     
   }

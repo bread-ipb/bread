@@ -14,12 +14,18 @@
 
 
 <ion-content padding>
+    <ion-item *ngFor="let item of detailtransaksi">
+          <ion-thumbnail item-start><img src="http://www.seafast.ipb.ac.id/images/stories/ilustrasi/muffin.jpg"height="60" width="65"/>
+          </ion-thumbnail>
+            <h6>{{ item.name }}</h6> <h5>{{ item.quantity }}</h5>
+          <p>Jadwal Pengiriman {{ item.tanggal}} {{item.waktu}}</p>
+      </ion-item>
 	<h5>Roti Muffin Enak Cokelat</h5><ion-badge class="belumDibayar" item-end>Belum dibayar</ion-badge>
-    <p>20 buah<br><b>Rp 59.000</b></p>
+    <p>Total Pembayaran:<b>Rp.{{itemsaya.total}}</b></p>
     <h6>Transfer ke:</h6>
     <p>012 2323 35445 (Bank BRC)<br>a.n. Bread Unit IPB</p>
     <h6>Dikirim:</h6>
-    <p>Selasa, 1 Januari 2018<br>07.00 WIB</p>
+   
     <h6>Alamat:</h6>
     <p>Jalan-jalan kuy</p>
 </ion-content>
