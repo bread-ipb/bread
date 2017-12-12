@@ -1,10 +1,6 @@
-import { CartService } from './../../providers/service-keranjang';
-import { Component,ViewChild } from '@angular/core';
+import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { PesananPage } from '../pesanan/pesanan';
-import { AngularFireAuth } from 'angularfire2/auth';
-import { AngularFireDatabase } from 'angularfire2/database';
-
+import { TransaksiPage } from '../transaksi/transaksi';
 
 /**
  * Generated class for the PengirimanPage page.
@@ -19,25 +15,14 @@ import { AngularFireDatabase } from 'angularfire2/database';
   templateUrl: 'pengiriman.html',
 })
 export class PengirimanPage {
-  myType:string;
-  constructor(public navCtrl: NavController,private fireauth: AngularFireAuth,public db:AngularFireDatabase, public navParams: NavParams,public cart:CartService) {
+
+  constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
- 
+
   ionViewDidLoad() {
     console.log('ionViewDidLoad PengirimanPage');
   }
-  pesanan(){
-    var user = this.fireauth.auth.currentUser; 
-    this.db.list('/transaksi'+user.uid).push({
-      item:this.cart.cartitem,
-      total:this.cart.totalHarga,
-      pembayaran:this.myType
-    })
-    console.log(this.myType);
-    this.cart.cartitem=[];
-    this.cart.totalHarga=0;
-    this.navCtrl.setRoot(PesananPage);
-
-  
+  transaksi(){
+    this.navCtrl.setRoot(TransaksiPage);
   }
 }

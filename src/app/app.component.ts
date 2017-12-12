@@ -15,6 +15,7 @@ import { CartService } from '../providers/service-keranjang';
 import { PengirimanPage } from './../pages/pengiriman/pengiriman';
 import { PesananPage } from '../pages/pesanan/pesanan';
 import { BeliPage } from '../pages/beli/beli';
+import { EditProfilPage } from '../pages/edit-profil/edit-profil';
 
 @Component({
   templateUrl: 'app.html'

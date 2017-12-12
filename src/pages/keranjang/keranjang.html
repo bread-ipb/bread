@@ -5,7 +5,9 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-
+  <ion-navbar>
+    <ion-title>Keranjang Belanja</ion-title>
+  </ion-navbar>
 </ion-header>
 
 
@@ -16,18 +18,30 @@
       {{item.quantity}}
       {{item.total}}
     </ion-item>
-<ion-item>{{total}}</ion-item>
-</ion-list>
-  <ion-navbar>
-    <ion-title>Keranjang</ion-title>
-  </ion-navbar>
+    <ion-item>{{total}}</ion-item>
+  </ion-list>
+
   <ion-item>
-      <ion-label>Pilih semua</ion-label>
-      <ion-checkbox color="secondary"></ion-checkbox>
+      <ion-thumbnail item-start>
+        <img src="http://www.seafast.ipb.ac.id/images/stories/ilustrasi/muffin.jpg" height="60" width="65"/>
+      </ion-thumbnail>
+        <h5>Roti Muffin Enak Cokelat</h5>
+        <p>Rp 59.000</p>
+        <ion-col><ion-badge><ion-icon ios="ios-trash" md="md-trash"></ion-icon></ion-badge></ion-col>
   </ion-item>
-    <ion-footer>
-			<ion-col>
-				<button class="ButtonMasuk" ion-button color="AyoDermawan" (click)="pengiriman()" full><p class="ButtonWord">Masuk</p></button>
-			</ion-col>
-		</ion-footer>
+
+  <ion-item>
+    <ion-thumbnail item-start>
+       <img src="http://www.seafast.ipb.ac.id/images/stories/ilustrasi/muffin.jpg" height="60" width="65"/>
+    </ion-thumbnail>
+      <h5>Roti Muffin Enak Cokelat</h5>
+      <p>Rp 35.000</p>
+      <ion-col><ion-badge><ion-icon ios="ios-trash" md="md-trash"></ion-icon></ion-badge></ion-col>
+  </ion-item>
 </ion-content>
+
+<ion-footer>
+    <ion-toolbar color="light">
+        <button ion-button [navPush]="pengiriman" full>Bayar</button>
+    </ion-toolbar>
+</ion-footer>

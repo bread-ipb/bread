@@ -19,28 +19,29 @@
 		<ion-list >
 			<ion-item>
 				<ion-label floating><p>Email</p></ion-label>
-				<ion-input [(ngModel)]="email" name="email" type="email" #username="ngModel" spellcheck="false" autocapitalize="off"
+				<ion-input [(ngModel)]="uname" name="uname" type="email" #username="ngModel" spellcheck="false" autocapitalize="off"
 					required>
 				</ion-input>
 			</ion-item>
-			<!-- <p ion-text [hidden]="user.valid || submitted == false" color="danger" padding-left class="Warning">
+			<p ion-text [hidden]="username.valid || submitted == false" color="danger" padding-left class="Warning">
 			Email harus diisi
-			</p> -->
+			</p>
 
 			<ion-item>
 				<ion-label floating><p>Password</p></ion-label>
 				
 				
-				<ion-input type="password" #password></ion-input>
-				<button class="tombol" [hidden]="lihat == false" (click)="showPassword()" ion-button clear color="dark" type="button" item-right> <ion-icon name="md-eye" class='icon' color="primary2"> </ion-icon> </button>
-				<button class="tombol" [hidden]="lihat == true" (click)="hidePassword()" ion-button clear color="dark" type="button" item-right> <ion-icon name="md-eye-off" class='icon' color="primary2"> </ion-icon> </button>
+				<ion-input [(ngModel)]="password" name="pass" type="password" #pass="ngModel" spellcheck="false" autocapitalize="off"
+				required></ion-input>
+				<!-- <button class="tombol" [hidden]="lihat == false" (click)="showPassword()" ion-button clear color="dark" type="button" item-right> <ion-icon name="md-eye" class='icon' color="primary2"> </ion-icon> </button>
+				<button class="tombol" [hidden]="lihat == true" (click)="hidePassword()" ion-button clear color="dark" type="button" item-right> <ion-icon name="md-eye-off" class='icon' color="primary2"> </ion-icon> </button> -->
 				
 
 			</ion-item>
 			
-			<!-- <p ion-text [hidden]="pass.valid || submitted == false" color="danger" padding-left class="Warning">
+			<p ion-text [hidden]="pass.valid || submitted == false" color="danger" padding-left class="Warning">
 				Password harus diisi
-			</p> -->
+			</p>
 		</ion-list>
 
 		<!--<ion-row responsive-sm>
@@ -52,7 +53,7 @@
 		<!--ini buat mock up-->
 		<ion-row>
 			<ion-col>
-				<button class="ButtonMasuk" ion-button color="AyoDermawan" (click)="masuk()" full><p class="ButtonWord">Masuk</p></button>
+				<button class="ButtonMasuk" ion-button color="AyoDermawan" (click)="masuk(loginForm)" type="submit" full><p class="ButtonWord">Masuk</p></button>
 			</ion-col>
 		</ion-row>
 

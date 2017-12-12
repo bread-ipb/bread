@@ -13,6 +13,7 @@ import { TransaksiPage } from '../pages/transaksi/transaksi';
 import { ProfilPage } from '../pages/profil/profil';
 import { TabsPage } from '../pages/tabs/tabs';
 import { DetailPage } from '../pages/detail/detail';
+import { EditProfilPage } from '../pages/edit-profil/edit-profil';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -50,7 +51,8 @@ import { BeliPage } from '../pages/beli/beli';
     DetailTransaksiPage,
     PengirimanPage,
     PesananPage,
-    BeliPage
+    BeliPage,
+    EditProfilPage
   ],
   imports: [
     BrowserModule,
@@ -75,7 +77,8 @@ import { BeliPage } from '../pages/beli/beli';
     DetailTransaksiPage,
     PengirimanPage,
     PesananPage,
-    BeliPage
+    BeliPage,
+    EditProfilPage
   ],
   providers: [
     StatusBar,

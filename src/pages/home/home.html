@@ -5,12 +5,12 @@
 </ion-header>
 
 <ion-content padding>
-  <h2>Produk Terlaris</h2>
+  <h4>Produk Terlaris</h4>
   <ion-grid>
       <ion-row>
         <ion-col col-6 round *ngFor="let item of items" [navPush]="DetailPage" [navParams]="{items:item}"><!--item variabel untuk ambil isi dari array items yang ada di add-item.ts -->
           <img src="http://www.seafast.ipb.ac.id/images/stories/ilustrasi/muffin.jpg"/>
-          <h6>{{ item.namaBarang }}</h6> <h5>{{ item.hargaBarang }}</h5>
+          <h6>{{ item.namaBarang }}</h6> <h5>Rp {{ item.hargaBarang }}</h5>
         </ion-col>
       </ion-row>
   </ion-grid>

@@ -15,6 +15,13 @@
 
 <ion-content padding>
 	<ion-list>
+		<ion-item (click)="EditFoto()">
+			<ion-row>
+				<img src="http://www.pvhc.net/img148/awvxzwhtrrtafvkavddd.png" width="35" height="30"/>
+				<ion-col><p>edit foto</p></ion-col>
+			</ion-row>
+		</ion-item>
+
 	  <ion-item>
 	    <ion-label stacked>Username</ion-label>
 	    <ion-input type="text" placeholder="Nama Pengguna Sekarang"></ion-input>
@@ -23,10 +30,11 @@
 	  <ion-item>
 	    <ion-label stacked>Password</ion-label>
 	    <ion-input type="password" placeholder="........"></ion-input>
-	  </ion-item>
+		</ion-item>
+		
 	  <ion-item>
-	    <ion-label stacked>alamat</ion-label> 
-	    <ion-input type="text" placeholder="Alamat Pengguna Sekarang"></ion-input>
+	    <ion-label stacked>Alamat</ion-label> 
+	    <ion-textarea type="text" placeholder="Alamat Pengguna Sekarang"></ion-textarea>
 	  </ion-item>
 	</ion-list>
 
