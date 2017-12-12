@@ -26,11 +26,11 @@
 
   <ion-item>
     <ion-label floating>Tanggal Pengiriman</ion-label>
-    <ion-datetime displayFormat="DDDD, DD MMMM YYYY" type="string" [(ngModel)]="tanggal" name="date" #date="ngModel" spellcheck="false" autocapitalize="off" required></ion-datetime>
+    <ion-datetime displayFormat="DDDD, DD MMMM YYYY" max="2020-12-31" type="string" [(ngModel)]="tanggal" name="date" #date="ngModel" spellcheck="false" autocapitalize="off" required></ion-datetime>
   </ion-item>
 
   <ion-item>
-    <ion-label floating>Batas Waktu Pengiriman</ion-label>
+    <ion-label floating>Jam Pengiriman</ion-label>
     <ion-datetime displayFormat="HH.mm WIB" type="string" [(ngModel)]="waktu" name="time" #time="ngModel" spellcheck="false" autocapitalize="off" required></ion-datetime>
   </ion-item>
 

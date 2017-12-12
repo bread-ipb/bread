@@ -27976,6 +27976,10 @@ page-detail-transaksi .belumDibayar {
   background-color: red;
 }
 
+page-profil .EditProfil {
+  background-color: #fff;
+}
+
 page-tabs #underscore {
   color: rgba(255, 255, 255, 0);
 }

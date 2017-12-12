@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { PesananPage } from '../pesanan/pesanan';
+import { TransaksiPage } from '../transaksi/transaksi';
 
 /**
  * Generated class for the PengirimanPage page.
@@ -22,7 +22,7 @@ export class PengirimanPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad PengirimanPage');
   }
-  pesanan(){
-  this.navCtrl.setRoot(PesananPage);
+  transaksi(){
+    this.navCtrl.setRoot(TransaksiPage);
   }
 }
