@@ -21,9 +21,9 @@
         </ion-thumbnail>
           <ion-card-content>
             <h2>Order #{{i+1}}</h2>
-            <p>20 buah</p>
             <ion-item>
-              <h5>Status:</h5> <ion-badge item-end>Dibayar</ion-badge>
+              <h5>Status:</h5><p><ion-badge [hidden]="item.status!=0" class='belumDibayar'>Belum Dibayar</ion-badge></p>
+                <p><ion-badge [hidden]="item.status!=1" >Diproses</ion-badge></p>
             </ion-item>
           </ion-card-content>
       </ion-item>
