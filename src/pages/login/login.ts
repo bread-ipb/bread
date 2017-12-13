@@ -1,9 +1,11 @@
+import { TabsadminPage } from './../tabsadmin/tabsadmin';
 import { Component,ViewChild } from '@angular/core';
 import { IonicPage, NavController, NavParams,AlertController} from 'ionic-angular';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { TabsPage } from '../tabs/tabs';
 import { RegisterPage } from '../register/register';
 import { NgForm } from '@angular/forms/src/directives/ng_form';
+
 
 // import { AngularFireAuth } from 'angularfire2/auth';
 // import { AngularFireDatabase, FirebaseObjectObservable } from 'angularfire2/database';
@@ -59,11 +61,16 @@ export class LoginPage {
     .then( user => {
       //this.navCtrl.setRoot( LoggedinPage );
       // user is logged in
-      
+        if(this.uname=='nuhsat@gmail.com'){
+          console.log('got some data', this.fire.auth.currentUser);
+          this.alert('Success! You\'re logged in');
+          this.navCtrl.setRoot(TabsadminPage);  
+        }
+        else{
         console.log('got some data', this.fire.auth.currentUser);
         this.alert('Success! You\'re logged in');
         this.navCtrl.setRoot(TabsPage);
-      
+      }
     })
       .catch( error => {
       console.log('got an error', error);
