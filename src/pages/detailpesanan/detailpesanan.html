@@ -14,12 +14,17 @@
 
 
 <ion-content padding>
-
+    <ion-item *ngFor="let item of detailtransaksi">
+        <ion-thumbnail item-start><img src="http://www.seafast.ipb.ac.id/images/stories/ilustrasi/muffin.jpg"height="60" width="65"/>
+        </ion-thumbnail>
+          <h6>{{ item.name }}</h6> <h5>{{ item.quantity }}</h5>
+        <p>Jadwal Pengiriman {{ item.tanggal}} {{item.waktu}}</p>
+    </ion-item>
     <ion-item>
         <ion-thumbnail item-start>
           <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3AEQwFb78GZahJMVYc3JiezkKPhHHh7Eezrvm739BFSqrGT3iNQ"/>
         </ion-thumbnail>
-        <h2>Roti Muffin Tea</h2>
+        <h2>{{namauser}}</h2>
         <p>20 buah</p>
         <ion-item>
             <h5>Status:</h5> <ion-badge item-end>Dibayar</ion-badge>
