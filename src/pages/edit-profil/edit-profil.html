@@ -24,12 +24,12 @@
 
 	  <ion-item>
 	    <ion-label stacked>Username</ion-label>
-	    <ion-input type="text" placeholder="Nama Pengguna Sekarang"></ion-input>
+	    <ion-input type="text" value="{{nama}}" [(ngModel)]="nama" name="nama" #user="ngModel"></ion-input>
 	  </ion-item>
 
 	  <ion-item>
-	    <ion-label stacked>Password</ion-label>
-	    <ion-input type="password" placeholder="........"></ion-input>
+	    <ion-label stacked>Nomor Telepon</ion-label>
+	    <ion-input type="text[0-9]" value={{telepon}}></ion-input>
 		</ion-item>
 		
 	  <ion-item>
