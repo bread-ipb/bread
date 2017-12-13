@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { EditProdukPage } from '../edit-produk/edit-produk';
 import { TambahProdukPage } from '../tambah-produk/tambah-produk';
+import { AngularFireAuth } from 'angularfire2/auth';
+import { AngularFireDatabase } from 'angularfire2/database';
 
 /**
  * Generated class for the ProdukadminPage page.
@@ -16,8 +18,12 @@ import { TambahProdukPage } from '../tambah-produk/tambah-produk';
   templateUrl: 'produkadmin.html',
 })
 export class ProdukadminPage {
-
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  items:any;
+  constructor(private fireauth: AngularFireAuth,public db:AngularFireDatabase,public navCtrl: NavController, public navParams: NavParams) {
+    this.db.list('/item').subscribe(data => {
+      this.items=data;
+      console.log(this.items);        
+    });
   }
 
   ionViewDidLoad() {
@@ -28,7 +34,9 @@ export class ProdukadminPage {
     this.navCtrl.push(EditProdukPage);
   }
 
-  deleteProduk(){
+  deleteProduk(item){
+    console.log(item.$key);
+    this.db.object(`/item/${item.$key}`).remove();  
 
   }
 
