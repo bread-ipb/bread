@@ -1,3 +1,10 @@
+import { DetailpesananPage } from './../pages/detailpesanan/detailpesanan';
+import { ProdukadminPage } from './../pages/produkadmin/produkadmin';
+import { ProfiladminPage } from './../pages/profiladmin/profiladmin';
+
+import { PesananadminPage } from './../pages/pesananadmin/pesananadmin';
+import { TabsadminPage } from './../pages/tabsadmin/tabsadmin';
+import { BeliPage } from './../pages/beli/beli';
 import { PengirimanPage } from './../pages/pengiriman/pengiriman';
 import { DetailTransaksiPage } from './../pages/detail-transaksi/detail-transaksi';
 import { NgModule, ErrorHandler } from '@angular/core';
@@ -13,7 +20,6 @@ import { TransaksiPage } from '../pages/transaksi/transaksi';
 import { ProfilPage } from '../pages/profil/profil';
 import { TabsPage } from '../pages/tabs/tabs';
 import { DetailPage } from '../pages/detail/detail';
-import { EditProfilPage } from '../pages/edit-profil/edit-profil';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -23,7 +29,10 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { CartService } from '../providers/service-keranjang';
 import { PesananPage } from '../pages/pesanan/pesanan';
-import { BeliPage } from '../pages/beli/beli';
+
+
+
+
 
 
 
@@ -52,7 +61,11 @@ import { BeliPage } from '../pages/beli/beli';
     PengirimanPage,
     PesananPage,
     BeliPage,
-    EditProfilPage
+    TabsadminPage,
+    PesananadminPage,
+    ProdukadminPage,
+    ProfiladminPage,
+    DetailpesananPage
   ],
   imports: [
     BrowserModule,
@@ -78,7 +91,11 @@ import { BeliPage } from '../pages/beli/beli';
     PengirimanPage,
     PesananPage,
     BeliPage,
-    EditProfilPage
+    TabsadminPage,
+    PesananadminPage,
+    ProfiladminPage,
+    ProdukadminPage,
+    DetailpesananPage
   ],
   providers: [
     StatusBar,
