@@ -12,13 +12,17 @@ import { CartService } from './../../providers/service-keranjang';
 
 export class HomePage {
   DetailPage:any;
-  items:any;
+  items:any = [];
   whatever:any;
   constructor(public navCtrl: NavController,private fireauth: AngularFireAuth,public db:AngularFireDatabase, public cart:CartService, public navParams: NavParams) {
     this.DetailPage=DetailPage;
 
-    this.db.list('/item').subscribe(data => {
-      this.items=data;
+    this.db.list('/item/',{query:{orderByChild:'penjualan'}}).subscribe(data => {
+      for(var i=data.length-1, j=0;i>=data.length-4;i--)
+      {
+          this.items[j]=data[i];
+          j++;
+      }
       console.log(this.items);        
     });
   }

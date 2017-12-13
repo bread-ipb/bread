@@ -1,3 +1,4 @@
+import { AngularFireDatabase } from 'angularfire2/database';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { NgForm } from '@angular/forms/src/directives/ng_form';
@@ -21,7 +22,7 @@ export class TambahProdukPage {
   deskripsi:string;
   submitted=false;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public alertCtrl: AlertController) {
+  constructor(public db:AngularFireDatabase,public navCtrl: NavController, public navParams: NavParams, public alertCtrl: AlertController) {
   }
 
   ionViewDidLoad() {
@@ -38,7 +39,11 @@ export class TambahProdukPage {
 
   tambah(form: NgForm){
     this.submitted=true;
-    // this.cart.cartitem.push({name:this.item.namaBarang,quantity:this.quantity,total:this.item.hargaBarang*this.quantity,tanggal:this.tanggal,waktu:this.waktu});
+     this.db.list('/item/').push({
+       namaBarang:this.judul,
+       hargaBarang:this.harga,
+       deskripsi:this.deskripsi,
+       penjualan:0});
     // console.log(this.cart.cartitem);
     let alert = this.alertCtrl.create({
       title: 'Berhasil!',
