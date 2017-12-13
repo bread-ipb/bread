@@ -7,12 +7,22 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>pesanan</ion-title>
+    <ion-title>Pembelian Berhasil!</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
-
+    <h4>Order Nomor BR1213 Telah Diterima.</h4>
+    <p>Silakan transfer pembayaran sejumlah <b>RP 43.000</b> ke rekening:<br>
+    <b>BNI</b><br>
+    <b>0352138</b><br>
+    batas pembayaran adalah 24 jam setelah order.</p>
 </ion-content>
+
+<ion-footer>
+    <ion-toolbar color="light">
+        <button ion-button (click)="selesai()" full>Selesai</button>
+    </ion-toolbar>
+</ion-footer>
