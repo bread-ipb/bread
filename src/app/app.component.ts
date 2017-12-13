@@ -20,6 +20,8 @@ import { BeliPage } from './../pages/beli/beli';
 import { ProfiladminPage } from './../pages/profiladmin/profiladmin';
 import { ProdukadminPage } from './../pages/produkadmin/produkadmin';
 import { DetailpesananPage } from './../pages/detailpesanan/detailpesanan';
+import { EditProdukPage } from '../pages/edit-produk/edit-produk';
+import { TambahProdukPage } from '../pages/tambah-produk/tambah-produk';
 @Component({
   templateUrl: 'app.html'
 })

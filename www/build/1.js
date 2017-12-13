@@ -1,22 +1,14 @@
 webpackJsonp([1],{
 
-<<<<<<< HEAD
-/***/ 434:
-=======
-/***/ 435:
->>>>>>> a5362da11b9ed38c0a9ec1d893c503f369f4c844
+/***/ 449:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PesananPageModule", function() { return PesananPageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TambahProdukPageModule", function() { return TambahProdukPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(14);
-<<<<<<< HEAD
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__pesanan__ = __webpack_require__(148);
-=======
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__pesanan__ = __webpack_require__(149);
->>>>>>> a5362da11b9ed38c0a9ec1d893c503f369f4c844
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__tambah_produk__ = __webpack_require__(295);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -26,23 +18,23 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var PesananPageModule = (function () {
-    function PesananPageModule() {
+var TambahProdukPageModule = (function () {
+    function TambahProdukPageModule() {
     }
-    PesananPageModule = __decorate([
+    TambahProdukPageModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgModule */])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__pesanan__["a" /* PesananPage */],
+                __WEBPACK_IMPORTED_MODULE_2__tambah_produk__["a" /* TambahProdukPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__pesanan__["a" /* PesananPage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__tambah_produk__["a" /* TambahProdukPage */]),
             ],
         })
-    ], PesananPageModule);
-    return PesananPageModule;
+    ], TambahProdukPageModule);
+    return TambahProdukPageModule;
 }());
 
-//# sourceMappingURL=pesanan.module.js.map
+//# sourceMappingURL=tambah-produk.module.js.map
 
 /***/ })
 

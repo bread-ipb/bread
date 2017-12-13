@@ -1,0 +1,58 @@
+<!--
+  Generated template for the TambahProdukPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Tambah Produk</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <form #tambahForm="ngForm" novalidate>
+    <ion-item>
+      <ion-label floating>Nama Produk</ion-label>
+      <ion-input [(ngModel)]="judul" name="ttl" type="text" #ttl="ngModel" spellcheck="false" autocapitalize="off" required></ion-input>
+    </ion-item>
+
+    <p ion-text [hidden]="ttl.valid || submitted==false" color="danger" padding-left>
+      warning judul
+    </p>
+
+    <ion-item>
+      <ion-label floating>Harga</ion-label>
+      <ion-input [(ngModel)]="harga" name="hrg" type="number" minvalue="0" #hrg="ngModel" spellcheck="false" autocapitalize="off" required></ion-input>
+    </ion-item>
+
+    <p ion-text [hidden]="hrg.valid || submitted==false" color="danger" padding-left>
+      warning harga
+    </p>
+
+    <ion-item>
+      <ion-label floating>Deskripsi Produk</ion-label>
+      <ion-input [(ngModel)]="deskripsi" name="desc" type="text" #desc="ngModel" spellcheck="false" autocapitalize="off" required></ion-input>
+    </ion-item>
+  
+    <p ion-text [hidden]="desc.valid || submitted==false" color="danger" padding-left>
+      warning desc
+    </p>
+  
+
+    <!-- <ion-item>
+      <ion-label floating>Tanggal Pengiriman</ion-label>
+      <ion-datetime displayFormat="DDDD, DD MMMM YYYY" max="2020-12-31" type="string" [(ngModel)]="tanggal" name="date" #date="ngModel" spellcheck="false" autocapitalize="off" required></ion-datetime>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Jam Pengiriman</ion-label>
+      <ion-datetime displayFormat="HH.mm WIB" type="string" [(ngModel)]="waktu" name="time" #time="ngModel" spellcheck="false" autocapitalize="off" required></ion-datetime>
+    </ion-item> -->
+
+    <button ion-button [disabled]="!ttl.valid || !hrg.valid || !desc.valid" full (click)="tambah(tambahForm)" type="submit">Tambah Produk</button>
+  </form>
+</ion-content>
