@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { EditProdukPage } from '../edit-produk/edit-produk';
+import { TambahProdukPage } from '../tambah-produk/tambah-produk';
 
 /**
  * Generated class for the ProdukadminPage page.
@@ -20,6 +22,18 @@ export class ProdukadminPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ProdukadminPage');
+  }
+
+  editProduk(){
+    this.navCtrl.push(EditProdukPage);
+  }
+
+  deleteProduk(){
+
+  }
+
+  tambahProduk(){
+    this.navCtrl.push(TambahProdukPage);
   }
 
 }

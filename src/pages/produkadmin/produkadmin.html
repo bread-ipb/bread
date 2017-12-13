@@ -7,12 +7,28 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>produkadmin</ion-title>
+    <ion-title>Tambah Produk</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
+  <ion-card>
+      <ion-item>
+        <ion-thumbnail item-start>
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3AEQwFb78GZahJMVYc3JiezkKPhHHh7Eezrvm739BFSqrGT3iNQ"/>
+        </ion-thumbnail>
+          <ion-card-content>
+            <h2>Roti Muffin Tea</h2><br>
+            <p><b>Rp 45.000</b></p>
+            <button ion-button (click)="editProduk()">Edit</button>
+            <button ion-button color="danger" (click)="deleteProduk()">Delete</button>
+          </ion-card-content>
+      </ion-item>
+    </ion-card>
 
+    <ion-fab right bottom>
+      <button ion-fab mini (click)="tambahProduk()"><ion-icon name="add"></ion-icon></button>
+    </ion-fab>
 </ion-content>

@@ -16,9 +16,9 @@ import { PesananadminPage } from '../pesananadmin/pesananadmin';
   templateUrl: 'tabsadmin.html',
   template: `
   <ion-tabs>
-    <ion-tab tabIcon="call" [root]="tabOne" tabBadge="3" tabBadgeStyle="danger"></ion-tab>
-    <ion-tab tabIcon="chatbubbles" [root]="tabTwo"></ion-tab>
-    <ion-tab tabIcon="musical-notes" [root]="tabThree"></ion-tab>
+    <ion-tab tabIcon="ios-home" [root]="tabOne" tabBadge="3" tabBadgeStyle="danger"></ion-tab>
+    <ion-tab tabIcon="ios-pizza" [root]="tabTwo"></ion-tab>
+    <ion-tab tabIcon="ios-contact" [root]="tabThree"></ion-tab>
   </ion-tabs>
   `
 })
