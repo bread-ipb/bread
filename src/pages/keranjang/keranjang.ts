@@ -17,18 +17,19 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 export class KeranjangPage {
   items=[];
   total=0;
-  pengiriman:any;
+
   constructor(public navCtrl: NavController, public navParams: NavParams,public cart:CartService) {
     this.items=this.cart.cartitem;
-    this.pengiriman=PengirimanPage;
+
     for(var i=0;i<this.items.length;i++){
         
         var produk = this.items[i];
         this.total +=produk.total;
+
     }
 
   }
-  
+ 
  
   ionViewDidLoad() {
     console.log(this.total);
@@ -36,6 +37,20 @@ export class KeranjangPage {
   removeitem(item){
     var index=this.items.indexOf(item);
     this.items.splice(index,1);
-    console.log(this.items)
+    console.log(this.items);
+    this.total=0;
+    for(var i=0;i<this.items.length;i++){
+      
+      var produk = this.items[i];
+      this.total +=produk.total;
+
+  }
+  console.log(this.total);
+  }
+  pengiriman(){
+    this.cart.totalHarga=this.total;
+    this.navCtrl.push(PengirimanPage);
+    console.log(this.cart.cartitem);
+    console.log(this.cart.totalHarga);
   }
 }

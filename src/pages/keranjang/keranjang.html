@@ -26,7 +26,7 @@
         <img src="http://www.seafast.ipb.ac.id/images/stories/ilustrasi/muffin.jpg" height="60" width="65"/>
       </ion-thumbnail>
         <h5>{{item.name}}<br>{{item.quantity}} Pcs</h5>
-        <p>{{item.total}}</p>
+        <p>{{item.total}}</p> 
         <ion-col><ion-badge (click)="removeitem(item)" ><ion-icon ios="ios-trash" md="md-trash"></ion-icon></ion-badge></ion-col>
   </ion-item>
 
@@ -34,6 +34,6 @@
 
 <ion-footer>
     <ion-toolbar color="light">
-        <button ion-button [navPush]="pengiriman" full>Bayar</button>
+        <button ion-button (click)="pengiriman()" full>Bayar</button>
     </ion-toolbar>
 </ion-footer>
