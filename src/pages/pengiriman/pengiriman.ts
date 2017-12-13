@@ -20,7 +20,9 @@ import { AngularFireDatabase } from 'angularfire2/database';
 })
 export class PengirimanPage {
   myType:string;
+  PesananPage:any;
   constructor(public navCtrl: NavController,private fireauth: AngularFireAuth,public db:AngularFireDatabase, public navParams: NavParams,public cart:CartService) {
+    this.PesananPage=PesananPage;
   }
  
   ionViewDidLoad() {
@@ -38,8 +40,7 @@ export class PengirimanPage {
     console.log(this.myType);
     this.cart.cartitem=[];
     this.cart.totalHarga=0;
-    this.navCtrl.setRoot(PesananPage);
-
+  
   
   }
 }

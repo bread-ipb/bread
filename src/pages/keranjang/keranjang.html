@@ -25,8 +25,9 @@
       <ion-thumbnail item-start>
         <img src="http://www.seafast.ipb.ac.id/images/stories/ilustrasi/muffin.jpg" height="60" width="65"/>
       </ion-thumbnail>
-        <h5>{{item.name}}<br>{{item.quantity}} Pcs</h5>
-        <p>{{item.total}}</p> 
+        <h5>Nama Produk : {{item.name}}<br>
+        Kuantitas : {{item.quantity}} Pcs</h5>
+        <p>Total Biaya : Rp.{{item.total}}</p> 
         <ion-col><ion-badge (click)="removeitem(item)" ><ion-icon ios="ios-trash" md="md-trash"></ion-icon></ion-badge></ion-col>
   </ion-item>
 

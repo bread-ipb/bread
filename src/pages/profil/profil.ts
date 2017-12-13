@@ -20,6 +20,7 @@ export class ProfilPage {
   nama: string;
   username: string;
   telepon: number;
+  alamat:string;
   
   constructor(public db : AngularFireDatabase, private alertCtrl: AlertController,private fire:AngularFireAuth,public navCtrl: NavController, public navParams: NavParams) {
     var user = this.fire.auth.currentUser;
@@ -29,6 +30,7 @@ export class ProfilPage {
       this.nama = data.name;
       this.username = data.username;
       this.telepon = data.telepon;
+      this.alamat = data.alamat;
     })
   }
 

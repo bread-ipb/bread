@@ -5,6 +5,7 @@ import { TabsPage } from '../tabs/tabs'
 import { LoginPage } from '../login/login'
 import { AngularFireDatabase } from 'angularfire2/database';
 import { NgForm } from '@angular/forms/src/directives/ng_form';
+import { NULL_EXPR } from '@angular/compiler/src/output/output_ast';
 
 /**
  * Generated class for the RegisterPage page.
@@ -26,6 +27,8 @@ export class RegisterPage {
   password:string;
   telepon:number;
   submitted=false;
+  alamat:string;
+  ayam = 'belum diisi';
 
   constructor(public db : AngularFireDatabase, private alertCtrl: AlertController,private fire:AngularFireAuth,public navCtrl: NavController, public navParams: NavParams) {
   }
@@ -51,7 +54,8 @@ export class RegisterPage {
           id : data.uid,
           name : this.name,
           username : this.email,
-          telepon : this.telepon
+          telepon : this.telepon,
+          alamat : this.ayam
         })
         console.log(data);
         this.alert('Registered!');

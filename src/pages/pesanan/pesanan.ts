@@ -14,13 +14,18 @@ import { TabsPage } from '../tabs/tabs';
   selector: 'page-pesanan',
   templateUrl: 'pesanan.html',
 })
-export class PesananPage {
 
+
+export class PesananPage {
+itil:any;
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad PesananPage');
+    this.itil=this.navParams.get('biji');
+    console.log(this.itil);
   }
 
   selesai(){

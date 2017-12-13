@@ -20,6 +20,7 @@ import { TransaksiPage } from '../pages/transaksi/transaksi';
 import { ProfilPage } from '../pages/profil/profil';
 import { TabsPage } from '../pages/tabs/tabs';
 import { DetailPage } from '../pages/detail/detail';
+import { EditProfilPage } from '../pages/edit-profil/edit-profil';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -69,7 +70,8 @@ import { TambahProdukPage } from '../pages/tambah-produk/tambah-produk';
     ProfiladminPage,
     DetailpesananPage,
     EditProdukPage,
-    TambahProdukPage
+    TambahProdukPage,
+    EditProfilPage
   ],
   imports: [
     BrowserModule,
@@ -101,7 +103,8 @@ import { TambahProdukPage } from '../pages/tambah-produk/tambah-produk';
     ProdukadminPage,
     DetailpesananPage,
     EditProdukPage,
-    TambahProdukPage
+    TambahProdukPage,
+    EditProfilPage
   ],
   providers: [
     StatusBar,

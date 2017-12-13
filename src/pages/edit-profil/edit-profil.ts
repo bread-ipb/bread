@@ -23,6 +23,7 @@ export class EditProfilPage {
   telepon: number;
   image: string;
   user_id: string;
+  alamat: string;
 
   constructor(public db : AngularFireDatabase, private alertCtrl: AlertController,private fire:AngularFireAuth,public navCtrl: NavController, public navParams: NavParams) {
     var user = this.fire.auth.currentUser;
@@ -32,6 +33,7 @@ export class EditProfilPage {
       this.nama = data.name;
       this.username = data.username;
       this.telepon = data.telepon;
+      this.alamat = data.alamat;
     })
   }
 
@@ -51,7 +53,8 @@ export class EditProfilPage {
     var user = this.fire.auth.currentUser;          
     this.db.object('/user/'+user.uid).update({
       name : this.nama, 
-      telepon : this.telepon
+      telepon : this.telepon,
+      alamat : this.alamat
     });
   		this.navCtrl.pop();
   		this.alert('Profil Berhasil Diedit');
