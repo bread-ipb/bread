@@ -14,13 +14,13 @@
   
   <ion-content padding>
   
-    <ion-card (click)="DetailPesanan()">
+    <ion-card *ngFor="let item of transaksi; let i = index;" [navPush]="DetailpesananPage" [navParams]="{detailtrans:item.$key,itemku:item}">
       <ion-item>
         <ion-thumbnail item-start>
           <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3AEQwFb78GZahJMVYc3JiezkKPhHHh7Eezrvm739BFSqrGT3iNQ"/>
         </ion-thumbnail>
           <ion-card-content>
-            <h2>Roti Muffin Tea</h2>
+            <h2>Order #{{i+1}}</h2>
             <p>20 buah</p>
             <ion-item>
               <h5>Status:</h5> <ion-badge item-end>Dibayar</ion-badge>
@@ -28,20 +28,5 @@
           </ion-card-content>
       </ion-item>
     </ion-card>
-  
-    <ion-card (click)="DetailPesanan()">
-        <ion-item>
-          <ion-thumbnail item-start>
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3AEQwFb78GZahJMVYc3JiezkKPhHHh7Eezrvm739BFSqrGT3iNQ"/>
-          </ion-thumbnail>
-            <ion-card-content>
-              <h2>Roti Muffin Tea</h2>
-              <p>20 buah</p>
-              <ion-item>
-                <h5>Status:</h5> <ion-badge item-end>Dibayar</ion-badge>
-              </ion-item>
-            </ion-card-content>
-        </ion-item>
-      </ion-card>
       
   </ion-content>
