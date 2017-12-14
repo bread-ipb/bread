@@ -1,3 +1,5 @@
+import { KonfirmasiPembayaranPage } from './../pages/konfirmasi-pembayaran/konfirmasi-pembayaran';
+import { EditProfilPage } from './../pages/edit-profil/edit-profil';
 import { DetailpesananPage } from './../pages/detailpesanan/detailpesanan';
 import { ProdukadminPage } from './../pages/produkadmin/produkadmin';
 import { ProfiladminPage } from './../pages/profiladmin/profiladmin';
@@ -20,7 +22,6 @@ import { TransaksiPage } from '../pages/transaksi/transaksi';
 import { ProfilPage } from '../pages/profil/profil';
 import { TabsPage } from '../pages/tabs/tabs';
 import { DetailPage } from '../pages/detail/detail';
-import { EditProfilPage } from '../pages/edit-profil/edit-profil';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -32,6 +33,7 @@ import { CartService } from '../providers/service-keranjang';
 import { PesananPage } from '../pages/pesanan/pesanan';
 import { EditProdukPage } from '../pages/edit-produk/edit-produk';
 import { TambahProdukPage } from '../pages/tambah-produk/tambah-produk';
+
 
 
 
@@ -71,7 +73,8 @@ import { TambahProdukPage } from '../pages/tambah-produk/tambah-produk';
     DetailpesananPage,
     EditProdukPage,
     TambahProdukPage,
-    EditProfilPage
+    EditProfilPage,
+    KonfirmasiPembayaranPage
   ],
   imports: [
     BrowserModule,
@@ -104,7 +107,8 @@ import { TambahProdukPage } from '../pages/tambah-produk/tambah-produk';
     DetailpesananPage,
     EditProdukPage,
     TambahProdukPage,
-    EditProfilPage
+    EditProfilPage,
+    KonfirmasiPembayaranPage
   ],
   providers: [
     StatusBar,

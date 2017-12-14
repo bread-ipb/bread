@@ -1,3 +1,4 @@
+import { KonfirmasiPembayaranPage } from './../pages/konfirmasi-pembayaran/konfirmasi-pembayaran';
 import { TabsadminPage } from './../pages/tabsadmin/tabsadmin';
 import { PesananadminPage } from './../pages/pesananadmin/pesananadmin';
 import { Component } from '@angular/core';

@@ -5,10 +5,10 @@ webpackJsonp([7],{
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PesananPageModule", function() { return PesananPageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PengirimanPageModule", function() { return PengirimanPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__pesanan__ = __webpack_require__(166);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__pengiriman__ = __webpack_require__(165);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -18,23 +18,23 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var PesananPageModule = (function () {
-    function PesananPageModule() {
+var PengirimanPageModule = (function () {
+    function PengirimanPageModule() {
     }
-    PesananPageModule = __decorate([
+    PengirimanPageModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgModule */])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__pesanan__["a" /* PesananPage */],
+                __WEBPACK_IMPORTED_MODULE_2__pengiriman__["a" /* PengirimanPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__pesanan__["a" /* PesananPage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__pengiriman__["a" /* PengirimanPage */]),
             ],
         })
-    ], PesananPageModule);
-    return PesananPageModule;
+    ], PengirimanPageModule);
+    return PengirimanPageModule;
 }());
 
-//# sourceMappingURL=pesanan.module.js.map
+//# sourceMappingURL=pengiriman.module.js.map
 
 /***/ })
 

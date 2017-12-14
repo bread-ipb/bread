@@ -5,10 +5,10 @@ webpackJsonp([3],{
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TabsadminPageModule", function() { return TabsadminPageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ProfiladminPageModule", function() { return ProfiladminPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__tabsadmin__ = __webpack_require__(171);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__profiladmin__ = __webpack_require__(170);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -18,23 +18,23 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var TabsadminPageModule = (function () {
-    function TabsadminPageModule() {
+var ProfiladminPageModule = (function () {
+    function ProfiladminPageModule() {
     }
-    TabsadminPageModule = __decorate([
+    ProfiladminPageModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgModule */])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__tabsadmin__["a" /* TabsadminPage */],
+                __WEBPACK_IMPORTED_MODULE_2__profiladmin__["a" /* ProfiladminPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__tabsadmin__["a" /* TabsadminPage */]),
-            ]
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__profiladmin__["a" /* ProfiladminPage */]),
+            ],
         })
-    ], TabsadminPageModule);
-    return TabsadminPageModule;
+    ], ProfiladminPageModule);
+    return ProfiladminPageModule;
 }());
 
-//# sourceMappingURL=tabsadmin.module.js.map
+//# sourceMappingURL=profiladmin.module.js.map
 
 /***/ })
 
