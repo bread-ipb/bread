@@ -7,7 +7,7 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>Verifikasi Pengiriman</ion-title>
+    <ion-title>pengiriman</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -16,16 +16,16 @@
 <ion-content padding>
   <ion-item>
     <ion-label stacked>Nama Penerima</ion-label>
-    <ion-input type="text"></ion-input>
+    <ion-input type="text"  [(ngModel)]="namapenerima"></ion-input>
   </ion-item>
   
   <ion-item>
-    <ion-label stacked>Alamat Order</ion-label>
-    <ion-textarea type="text"></ion-textarea>
+    <ion-label stacked>Alamat</ion-label>
+    <ion-textarea type="text" [(ngModel)]="alamat"></ion-textarea>
   </ion-item>
-  <ion-item>
-      <ion-label stacked>Nomor Telpon</ion-label>
-      <ion-input type="number"></ion-input>
+  <ion-item >
+      <ion-label stacked >No.Telp</ion-label>
+      <ion-input type="number" [(ngModel)]="notelp"></ion-input>
     </ion-item>
   <ion-list radio-group [(ngModel)]="myType">
     <ion-list-header>
@@ -49,7 +49,7 @@
   </ion-list>
   <ion-footer>
 			<ion-col>
-				<button class="ButtonMasuk" ion-button color="AyoDermawan" [navPush]="PesananPage" (click)="pesanan()" [navParams]={biji:this.cart.totalHarga} full><p class="ButtonWord">Lanjutkan</p></button>
+				<button class="ButtonMasuk" ion-button color="AyoDermawan" (click)="pesanan()" full><p class="ButtonWord">Lanjutkan</p></button>
 			</ion-col>
 		</ion-footer>
 </ion-content>
