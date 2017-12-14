@@ -22,7 +22,7 @@
           <ion-card-content>
             <h2>{{item.namaBarang}}</h2><br>
             <p><b>{{item.hargaBarang}}</b></p>
-            <button ion-button (click)="editProduk()">Edit</button>
+            <button ion-button (click)="editProduk(item)">Edit</button>
             <button ion-button color="danger" (click)="deleteProduk(item)">Delete</button>
           </ion-card-content>
       </ion-item>

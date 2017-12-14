@@ -14,5 +14,30 @@
 
 
 <ion-content padding>
-
+	<ion-list>
+		<ion-item (click)="EditProfil()">
+			<ion-row class="EditProfil">
+				<img src="http://www.pvhc.net/img148/awvxzwhtrrtafvkavddd.png" width="70" height="60"/>
+				<ion-col>
+					<h3><br>{{nama}}</h3>
+					<p>edit profil</p>
+				</ion-col>	
+			</ion-row>
+	    </ion-item>
+		<ion-item>
+			<h3><br><br><b>Email</b></h3>
+			<p>{{username}}</p>
+		</ion-item>
+		<ion-item>
+		    <h3><b>No. HP</b></h3>
+		    <p>{{telepon}}</p>
+		</ion-item>
+		<ion-item>
+		    <h3><b>Alamat</b></h3>
+		    <p>{{alamat}}</p>
+		</ion-item>
+		<ion-item (click)="Logout">
+			<button ion-button outline item-end>Logout</button>
+		</ion-item>
+	</ion-list>
 </ion-content>

@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { TambahProdukPage } from '../tambah-produk/tambah-produk';
+import { AngularFireAuth } from 'angularfire2/auth';
+import { AngularFireDatabase } from 'angularfire2/database';
 
 /**
  * Generated class for the EditProdukPage page.
@@ -14,8 +17,10 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'edit-produk.html',
 })
 export class EditProdukPage {
+  items:any;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(private fireauth: AngularFireAuth,public db:AngularFireDatabase,public navCtrl: NavController, public navParams: NavParams) {
+  
   }
 
   ionViewDidLoad() {

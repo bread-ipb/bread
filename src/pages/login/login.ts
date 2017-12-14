@@ -61,7 +61,7 @@ export class LoginPage {
     .then( user => {
       //this.navCtrl.setRoot( LoggedinPage );
       // user is logged in
-        if(this.uname=='nuhsat@gmail.com'){
+        if(this.uname=='nuhsat@gmail.com' || this.uname=='jovan@gmail.com'){
           console.log('got some data', this.fire.auth.currentUser);
           this.alert('Success! You\'re logged in');
           this.navCtrl.setRoot(TabsadminPage);  

@@ -30,7 +30,8 @@ export class ProdukadminPage {
     console.log('ionViewDidLoad ProdukadminPage');
   }
 
-  editProduk(){
+  editProduk(item){
+    console.log(item.$key);
     this.navCtrl.push(EditProdukPage);
   }
 
