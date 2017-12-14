@@ -14,14 +14,15 @@
 
 
 <ion-content padding>
-	<ion-item *ngFor="let item of transaksi"  [navPush]="DetailTransaksiPage" [navParams]="{detailtrans:item.$key,itemku:item}">
+	<ion-item *ngFor="let item of transaksi; let i = index;"  [navPush]="DetailTransaksiPage" [navParams]="{detailtrans:item.$key,itemku:item}">
         <ion-thumbnail item-start>
           <img src="http://www.seafast.ipb.ac.id/images/stories/ilustrasi/muffin.jpg" height="60" width="65"/>
         </ion-thumbnail>
-	        <h5>{{ item.pembayaran }}</h5>
-          <p>{{ item.total }}</p>
+	        <h5>Order #{{i+1}}</h5>
+          <p></p>
           <p><ion-badge [hidden]="item.status!=0" class='belumDibayar'>Belum Dibayar</ion-badge></p>
           <p><ion-badge [hidden]="item.status!=1" >Diproses</ion-badge></p>
+          <p><ion-badge [hidden]="item.status!=2" class="sudahDikirim">Selesai</ion-badge></p>
     </ion-item>
     <!--<ion-item>
         <ion-thumbnail item-start (click)="detail()">
