@@ -18,6 +18,7 @@ import { TabsPage } from '../tabs/tabs';
 
 export class PesananPage {
 itil:any;
+atm:any;
   constructor(public navCtrl: NavController, public navParams: NavParams) {
 
   }
@@ -25,7 +26,9 @@ itil:any;
   ionViewDidLoad() {
     console.log('ionViewDidLoad PesananPage');
     this.itil=this.navParams.get('biji');
+    this.atm=this.navParams.get('atm');
     console.log(this.itil);
+    
   }
 
   selesai(){

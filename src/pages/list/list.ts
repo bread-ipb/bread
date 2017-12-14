@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { DetailPage } from '../detail/detail';
+import { AngularFireAuth } from 'angularfire2/auth';
+import { AngularFireDatabase } from 'angularfire2/database';
 
 /**
  * Generated class for the ListPage page.
@@ -15,11 +17,16 @@ import { DetailPage } from '../detail/detail';
 })
 export class ListPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-  }
+  DetailPage:any;
+  items:any;
+  whatever:any;
+  constructor(public navCtrl: NavController,private fireauth: AngularFireAuth,public db:AngularFireDatabase, public navParams: NavParams) {
+    this.DetailPage=DetailPage;
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad ListPage');
+    this.db.list('/item').subscribe(data => {
+      this.items=data;
+      console.log(this.items);        
+    });
   }
 
   detail(){

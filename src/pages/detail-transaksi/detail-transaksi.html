@@ -20,12 +20,22 @@
             <h6>{{ item.name }}</h6> <h5>{{ item.quantity }}</h5>
           <p>Jadwal Pengiriman {{ item.tanggal}} {{item.waktu}}</p>
       </ion-item>
-	<h5>Roti Muffin Enak Cokelat</h5><ion-badge class="belumDibayar" item-end>Belum dibayar</ion-badge>
+  <h5>Order #{{index+1}}</h5><ion-badge [hidden]="itemsaya.status!=0" class='belumDibayar'>Belum Dibayar</ion-badge>
+  <ion-badge [hidden]="itemsaya.status!=1" >Diproses</ion-badge>
+  <ion-badge [hidden]="itemsaya.status!=2" class="sudahDikirim">Selesai</ion-badge>
     <p>Total Pembayaran:<b>Rp.{{itemsaya.total}}</b></p>
     <h6>Transfer ke:</h6>
-    <p>012 2323 35445 (Bank BRC)<br>a.n. Bread Unit IPB</p>
+    <b [hidden]="itemsaya.pembayaran!='bca'">BCA dengan Nomer Rekening 14045</b>
+    <b [hidden]="itemsaya.pembayaran!='bni'">BNI dengan Nomer Rekening 14045</b>
+    <b [hidden]="itemsaya.pembayaran!='bri'">BRI dengan Nomer Rekening 14045</b>
     <h6>Dikirim:</h6>
    
     <h6>Alamat:</h6>
-    <p>Jalan-jalan kuy</p>
+    <p>{{itemsaya.alamat}}</p>
 </ion-content>
+<ion-footer>
+  <ion-toolbar color="light" [navPush]="KonfirmasiPage" [navParams]="{itemgue:itemsaya}">
+      <button [hidden]="itemsaya.status!=0" ion-button full>Konfirmasi</button>
+  </ion-toolbar>
+</ion-footer>
+

@@ -25,21 +25,10 @@
       <ion-option>Keju</ion-option>
     </ion-select>
   </ion-item>
-  <ion-row> 
-    <ion-col col-6 round (click)="detail()">
-        <img src="http://www.seafast.ipb.ac.id/images/stories/ilustrasi/muffin.jpg"/>
-        <h6>Roti Muffin Enak Cokelat</h6>
-        <h5>Rp59.000</h5>
-      </ion-col>
-      <ion-col col-6 round (click)="detail()">
-        <img src="http://www.seafast.ipb.ac.id/images/stories/ilustrasi/muffin.jpg"/>
-        <h6>Roti Muffin Enak Cokelat</h6>
-        <h5>Rp59.000</h5>
-      </ion-col>
-      <ion-col col-6 round (click)="detail()">
-        <img src="http://www.seafast.ipb.ac.id/images/stories/ilustrasi/muffin.jpg"/>
-        <h6>Roti Muffin Enak Cokelat</h6>
-        <h5>Rp59.000</h5>
-      </ion-col>
+  <ion-row>
+    <ion-col col-6 round *ngFor="let item of items" [navPush]="DetailPage" [navParams]="{items:item}"><!--item variabel untuk ambil isi dari array items yang ada di add-item.ts -->
+      <img src="http://www.seafast.ipb.ac.id/images/stories/ilustrasi/muffin.jpg"/>
+      <h6>{{ item.namaBarang }}</h6> <h5>Rp {{ item.hargaBarang }}</h5>
+    </ion-col>
   </ion-row>
 </ion-content>

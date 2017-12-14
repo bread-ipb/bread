@@ -13,10 +13,12 @@
 </ion-header>
 
 <ion-content padding>
-    <h4>Order Nomor BSA321 Telah Diterima.</h4>
+    <h4>Order Telah Diterima.</h4>
     <p>Silakan transfer pembayaran sejumlah <b>RP {{itil}}</b> ke rekening:<br>
-    <b>BNI</b><br>
-    <b>0352138</b><br>
+   <b [hidden]="atm!='bca'">BCA dengan Nomer Rekening 14045</b>
+   <b [hidden]="atm!='bni'">BNI dengan Nomer Rekening 14045</b>
+   <b [hidden]="atm!='bri'">BRI dengan Nomer Rekening 14045</b>
+
     batas pembayaran adalah 24 jam setelah order.</p>
 </ion-content>
 
