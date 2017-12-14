@@ -16,16 +16,25 @@
 <ion-content padding>
   <ion-item>
     <ion-label stacked>Nama Penerima</ion-label>
-    <ion-input type="text"></ion-input>
+    <ion-input type="text"  [(ngModel)]="namapenerima"></ion-input>
   </ion-item>
   
   <ion-item>
+<<<<<<< HEAD
     <ion-label stacked>Alamat Order</ion-label>
     <ion-textarea type="text"></ion-textarea>
   </ion-item>
   <ion-item>
       <ion-label stacked>Nomor Telpon</ion-label>
       <ion-input type="number"></ion-input>
+=======
+    <ion-label stacked>Alamat</ion-label>
+    <ion-textarea type="text" [(ngModel)]="alamat"></ion-textarea>
+  </ion-item>
+  <ion-item >
+      <ion-label stacked >No.Telp</ion-label>
+      <ion-input type="number" [(ngModel)]="notelp"></ion-input>
+>>>>>>> 368391a52aa88afd0733ed7cb6bb846e1a871cb1
     </ion-item>
   <ion-list radio-group [(ngModel)]="myType">
     <ion-list-header>
