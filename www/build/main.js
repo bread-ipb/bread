@@ -6,11 +6,11 @@ webpackJsonp([12],{
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TabsPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__home_home__ = __webpack_require__(269);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__list_list__ = __webpack_require__(271);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__keranjang_keranjang__ = __webpack_require__(272);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__transaksi_transaksi__ = __webpack_require__(273);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__profil_profil__ = __webpack_require__(275);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__home_home__ = __webpack_require__(270);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__list_list__ = __webpack_require__(272);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__keranjang_keranjang__ = __webpack_require__(273);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__transaksi_transaksi__ = __webpack_require__(274);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__profil_profil__ = __webpack_require__(276);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -52,7 +52,7 @@ var TabsPage = (function () {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DetailPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__beli_beli__ = __webpack_require__(270);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__beli_beli__ = __webpack_require__(271);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__providers_service_keranjang__ = __webpack_require__(49);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ionic_angular__ = __webpack_require__(9);
@@ -105,12 +105,12 @@ var DetailPage = (function () {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LoginPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__tabsadmin_tabsadmin__ = __webpack_require__(171);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__tabsadmin_tabsadmin__ = __webpack_require__(172);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(9);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_angularfire2_auth__ = __webpack_require__(15);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__tabs_tabs__ = __webpack_require__(138);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__register_register__ = __webpack_require__(319);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__register_register__ = __webpack_require__(320);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -212,6 +212,84 @@ var LoginPage = (function () {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return KonfirmasiPembayaranPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angularfire2_database__ = __webpack_require__(16);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ionic_angular_components_alert_alert_controller__ = __webpack_require__(77);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_angularfire2_auth__ = __webpack_require__(15);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+/**
+ * Generated class for the KonfirmasiPembayaranPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+var KonfirmasiPembayaranPage = (function () {
+    function KonfirmasiPembayaranPage(fire, db, navCtrl, navParams, alertCtrl) {
+        this.fire = fire;
+        this.db = db;
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.alertCtrl = alertCtrl;
+        this.user = this.fire.auth.currentUser;
+        this.db.object('/user/' + this.user.uid).subscribe(function (data) {
+            console.log(data);
+        });
+    }
+    KonfirmasiPembayaranPage.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad KonfirmasiPembayaranPage');
+        this.itemsaia = this.navParams.get('itemgue');
+        console.log(this.itemsaia);
+    };
+    KonfirmasiPembayaranPage.prototype.konfirmasi = function () {
+        this.db.list('/konfirmasi').push({
+            namaPengirim: this.nama,
+            rekening: this.rekening,
+            bank: this.myType,
+            tanggal: this.tanggal,
+            user: this.user.uid
+        });
+        // console.log(this.cart.cartitem);
+        var alert = this.alertCtrl.create({
+            title: 'Berhasil!',
+            subTitle: 'Pesanan Akan Segera Diproses',
+            buttons: ['OK']
+        });
+        this.db.object('/transaksi/' + this.itemsaia.$key).update({
+            status: 1
+        });
+    };
+    KonfirmasiPembayaranPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'page-konfirmasi-pembayaran',template:/*ion-inline-start:"D:\BGKTJL\bread\src\pages\konfirmasi-pembayaran\konfirmasi-pembayaran.html"*/`<!--\n\n  Generated template for the KonfirmasiPembayaranPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n  <ion-navbar>\n\n    <ion-title>konfirmasi-pembayaran</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n\n\n\n\n    \n\n      <ion-item>\n\n        <ion-label floating>Nama Pengirim</ion-label>\n\n        <ion-input [(ngModel)]="nama" name="namaPengirim" type="text" #namaPengirim="ngModel" required></ion-input>\n\n      </ion-item>\n\n      \n\n      <ion-item>\n\n        <ion-label floating>No. Rekening</ion-label>\n\n        <ion-input [(ngModel)]="rekening" name="norek" type="number" #norek="ngModel" required></ion-input>\n\n      </ion-item>\n\n    \n\n      <ion-list radio-group [(ngModel)]="myType">\n\n        <ion-list-header>\n\n          Bank\n\n        </ion-list-header>\n\n      \n\n        <ion-item>\n\n          <ion-label>BCA</ion-label>\n\n          <ion-radio  value="bca"></ion-radio>\n\n        </ion-item>\n\n      \n\n        <ion-item>\n\n          <ion-label>BNI</ion-label>\n\n          <ion-radio value="bni"></ion-radio>\n\n        </ion-item>\n\n      \n\n        <ion-item>\n\n          <ion-label>BRI</ion-label>\n\n          <ion-radio value="bri" ></ion-radio>\n\n        </ion-item>\n\n      </ion-list>\n\n    \n\n        <ion-item>\n\n          <ion-label floating>Tanggal Pembayaran</ion-label>\n\n          <ion-datetime displayFormat="DDDD, DD MMMM YYYY" type="string" [(ngModel)]="tanggal" name="date" #date="ngModel" spellcheck="false" autocapitalize="off" required></ion-datetime>\n\n        </ion-item>\n\n    \n\n        <button ion-button  full (click)="konfirmasi()" type="submit">Konfirmasi</button>\n\n\n\n  \n\n</ion-content>\n\n<!--[disabled]="!qty.valid || !date.valid || !time.valid"--> `/*ion-inline-end:"D:\BGKTJL\bread\src\pages\konfirmasi-pembayaran\konfirmasi-pembayaran.html"*/,
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_4_angularfire2_auth__["a" /* AngularFireAuth */], __WEBPACK_IMPORTED_MODULE_2_angularfire2_database__["a" /* AngularFireDatabase */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */], __WEBPACK_IMPORTED_MODULE_3_ionic_angular_components_alert_alert_controller__["a" /* AlertController */]])
+    ], KonfirmasiPembayaranPage);
+    return KonfirmasiPembayaranPage;
+}());
+
+//# sourceMappingURL=konfirmasi-pembayaran.js.map
+
+/***/ }),
+
+/***/ 164:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DetailpesananPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(9);
@@ -277,7 +355,7 @@ var DetailpesananPage = (function () {
 
 /***/ }),
 
-/***/ 164:
+/***/ 165:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -328,12 +406,12 @@ var EditProdukPage = (function () {
 
 /***/ }),
 
-/***/ 165:
+/***/ 166:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PengirimanPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__pesanan_pesanan__ = __webpack_require__(166);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__pesanan_pesanan__ = __webpack_require__(167);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__providers_service_keranjang__ = __webpack_require__(49);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ionic_angular__ = __webpack_require__(9);
@@ -401,7 +479,7 @@ var PengirimanPage = (function () {
 
 /***/ }),
 
-/***/ 166:
+/***/ 167:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -454,14 +532,14 @@ var PesananPage = (function () {
 
 /***/ }),
 
-/***/ 167:
+/***/ 168:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PesananadminPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__detailpesanan_detailpesanan__ = __webpack_require__(163);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__detailpesanan_detailpesanan__ = __webpack_require__(164);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_angularfire2_auth__ = __webpack_require__(15);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_angularfire2_database__ = __webpack_require__(16);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -515,15 +593,15 @@ var PesananadminPage = (function () {
 
 /***/ }),
 
-/***/ 168:
+/***/ 169:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ProdukadminPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__edit_produk_edit_produk__ = __webpack_require__(164);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__tambah_produk_tambah_produk__ = __webpack_require__(169);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__edit_produk_edit_produk__ = __webpack_require__(165);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__tambah_produk_tambah_produk__ = __webpack_require__(170);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_angularfire2_auth__ = __webpack_require__(15);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_angularfire2_database__ = __webpack_require__(16);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -586,7 +664,7 @@ var ProdukadminPage = (function () {
 
 /***/ }),
 
-/***/ 169:
+/***/ 170:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -665,7 +743,7 @@ var TambahProdukPage = (function () {
 
 /***/ }),
 
-/***/ 170:
+/***/ 171:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -721,27 +799,28 @@ var ProfiladminPage = (function () {
     };
     ProfiladminPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-profiladmin',template:/*ion-inline-start:"D:\BGKTJL\bread\src\pages\profiladmin\profiladmin.html"*/`<!--\n\n  Generated template for the ProfiladminPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n  <ion-navbar>\n\n    <ion-title>profiladmin</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n	<ion-list>\n\n		<ion-item (click)="EditProfil()">\n\n			<ion-row class="EditProfil">\n\n				<img src="http://www.pvhc.net/img148/awvxzwhtrrtafvkavddd.png" width="70" height="60"/>\n\n				<ion-col>\n\n					<h3><br>{{nama}}</h3>\n\n					<p>edit profil</p>\n\n				</ion-col>	\n\n			</ion-row>\n\n	    </ion-item>\n\n		<ion-item>\n\n			<h3><br><br><b>Email</b></h3>\n\n			<p>{{username}}</p>\n\n		</ion-item>\n\n		<ion-item>\n\n		    <h3><b>No. HP</b></h3>\n\n		    <p>{{telepon}}</p>\n\n		</ion-item>\n\n		<ion-item>\n\n		    <h3><b>Alamat</b></h3>\n\n		    <p>{{alamat}}</p>\n\n		</ion-item>\n\n		<ion-item (click)="Logout">\n\n			<button ion-button outline item-end>Logout</button>\n\n		</ion-item>\n\n	</ion-list>\n\n</ion-content>\n\n`/*ion-inline-end:"D:\BGKTJL\bread\src\pages\profiladmin\profiladmin.html"*/,
+            selector: 'page-profiladmin',template:/*ion-inline-start:"D:\BGKTJL\bread\src\pages\profiladmin\profiladmin.html"*/`<!--\n  Generated template for the ProfiladminPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>profiladmin</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n	<ion-list>\n		<ion-item (click)="EditProfil()">\n			<ion-row class="EditProfil">\n				<img src="http://www.pvhc.net/img148/awvxzwhtrrtafvkavddd.png" width="70" height="60"/>\n				<ion-col>\n					<h3><br>{{nama}}</h3>\n					<p>edit profil</p>\n				</ion-col>	\n			</ion-row>\n	    </ion-item>\n		<ion-item>\n			<h3><br><br><b>Email</b></h3>\n			<p>{{username}}</p>\n		</ion-item>\n		<ion-item>\n		    <h3><b>No. HP</b></h3>\n		    <p>{{telepon}}</p>\n		</ion-item>\n		<ion-item>\n		    <h3><b>Alamat</b></h3>\n		    <p>{{alamat}}</p>\n		</ion-item>\n		<ion-item (click)="Logout">\n			<button ion-button outline item-end>Logout</button>\n		</ion-item>\n	</ion-list>\n</ion-content>\n`/*ion-inline-end:"D:\BGKTJL\bread\src\pages\profiladmin\profiladmin.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_3_angularfire2_database__["a" /* AngularFireDatabase */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */], __WEBPACK_IMPORTED_MODULE_2_angularfire2_auth__["a" /* AngularFireAuth */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */]])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_3_angularfire2_database__["a" /* AngularFireDatabase */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3_angularfire2_database__["a" /* AngularFireDatabase */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2_angularfire2_auth__["a" /* AngularFireAuth */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2_angularfire2_auth__["a" /* AngularFireAuth */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */]) === "function" && _e || Object])
     ], ProfiladminPage);
     return ProfiladminPage;
+    var _a, _b, _c, _d, _e;
 }());
 
 //# sourceMappingURL=profiladmin.js.map
 
 /***/ }),
 
-/***/ 171:
+/***/ 172:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TabsadminPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__profiladmin_profiladmin__ = __webpack_require__(170);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__produkadmin_produkadmin__ = __webpack_require__(168);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__profiladmin_profiladmin__ = __webpack_require__(171);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__produkadmin_produkadmin__ = __webpack_require__(169);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ionic_angular__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pesananadmin_pesananadmin__ = __webpack_require__(167);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pesananadmin_pesananadmin__ = __webpack_require__(168);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -783,7 +862,7 @@ var TabsadminPage = (function () {
 
 /***/ }),
 
-/***/ 179:
+/***/ 180:
 /***/ (function(module, exports) {
 
 function webpackEmptyAsyncContext(req) {
@@ -796,11 +875,11 @@ function webpackEmptyAsyncContext(req) {
 webpackEmptyAsyncContext.keys = function() { return []; };
 webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
 module.exports = webpackEmptyAsyncContext;
-webpackEmptyAsyncContext.id = 179;
+webpackEmptyAsyncContext.id = 180;
 
 /***/ }),
 
-/***/ 219:
+/***/ 220:
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
@@ -829,11 +908,11 @@ var map = {
 		6
 	],
 	"../pages/pesananadmin/pesananadmin.module": [
-		492,
+		491,
 		5
 	],
 	"../pages/picture/picture.module": [
-		491,
+		492,
 		0
 	],
 	"../pages/produkadmin/produkadmin.module": [
@@ -864,12 +943,12 @@ function webpackAsyncContext(req) {
 webpackAsyncContext.keys = function webpackAsyncContextKeys() {
 	return Object.keys(map);
 };
-webpackAsyncContext.id = 219;
+webpackAsyncContext.id = 220;
 module.exports = webpackAsyncContext;
 
 /***/ }),
 
-/***/ 269:
+/***/ 270:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -929,7 +1008,7 @@ var HomePage = (function () {
 
 /***/ }),
 
-/***/ 270:
+/***/ 271:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1004,7 +1083,7 @@ var BeliPage = (function () {
 
 /***/ }),
 
-/***/ 271:
+/***/ 272:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1064,12 +1143,12 @@ var ListPage = (function () {
 
 /***/ }),
 
-/***/ 272:
+/***/ 273:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return KeranjangPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__pengiriman_pengiriman__ = __webpack_require__(165);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__pengiriman_pengiriman__ = __webpack_require__(166);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__providers_service_keranjang__ = __webpack_require__(49);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ionic_angular__ = __webpack_require__(9);
@@ -1138,14 +1217,14 @@ var KeranjangPage = (function () {
 
 /***/ }),
 
-/***/ 273:
+/***/ 274:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TransaksiPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__detail_transaksi_detail_transaksi__ = __webpack_require__(274);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__detail_transaksi_detail_transaksi__ = __webpack_require__(275);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_angularfire2_auth__ = __webpack_require__(15);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_angularfire2_database__ = __webpack_require__(16);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_service_keranjang__ = __webpack_require__(49);
@@ -1216,12 +1295,12 @@ var TransaksiPage = (function () {
 
 /***/ }),
 
-/***/ 274:
+/***/ 275:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DetailTransaksiPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__konfirmasi_pembayaran_konfirmasi_pembayaran__ = __webpack_require__(320);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__konfirmasi_pembayaran_konfirmasi_pembayaran__ = __webpack_require__(163);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(9);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_angularfire2_auth__ = __webpack_require__(15);
@@ -1282,7 +1361,7 @@ var DetailTransaksiPage = (function () {
 
 /***/ }),
 
-/***/ 275:
+/***/ 276:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1338,18 +1417,19 @@ var ProfilPage = (function () {
     };
     ProfilPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-profil',template:/*ion-inline-start:"D:\BGKTJL\bread\src\pages\profil\profil.html"*/`<!--\n\n  Generated template for the ProfilPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n  <ion-navbar>\n\n    <ion-title>Profil</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n	<ion-list>\n\n		<ion-item (click)="EditProfil()">\n\n			<ion-row class="EditProfil">\n\n				<img src="http://www.pvhc.net/img148/awvxzwhtrrtafvkavddd.png" width="70" height="60"/>\n\n				<ion-col>\n\n					<h3><br>{{nama}}</h3>\n\n					<p>edit profil</p>\n\n				</ion-col>	\n\n			</ion-row>\n\n	    </ion-item>\n\n		<ion-item>\n\n			<h3><br><br><b>Email</b></h3>\n\n			<p>{{username}}</p>\n\n		</ion-item>\n\n		<ion-item>\n\n		    <h3><b>No. HP</b></h3>\n\n		    <p>{{telepon}}</p>\n\n		</ion-item>\n\n		<ion-item>\n\n		    <h3><b>Alamat</b></h3>\n\n		    <p>{{alamat}}</p>\n\n		</ion-item>\n\n		<ion-item (click)="Logout">\n\n			<button ion-button outline item-end>Logout</button>\n\n		</ion-item>\n\n	</ion-list>\n\n</ion-content>\n\n`/*ion-inline-end:"D:\BGKTJL\bread\src\pages\profil\profil.html"*/,
+            selector: 'page-profil',template:/*ion-inline-start:"D:\BGKTJL\bread\src\pages\profil\profil.html"*/`<!--\n  Generated template for the ProfilPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>Profil</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n	<ion-list>\n		<ion-item (click)="EditProfil()">\n			<ion-row class="EditProfil">\n				<img src="http://www.pvhc.net/img148/awvxzwhtrrtafvkavddd.png" width="70" height="60"/>\n				<ion-col>\n					<h3><br>{{nama}}</h3>\n					<p>edit profil</p>\n				</ion-col>	\n			</ion-row>\n	    </ion-item>\n		<ion-item>\n			<h3><br><br><b>Email</b></h3>\n			<p>{{username}}</p>\n		</ion-item>\n		<ion-item>\n		    <h3><b>No. HP</b></h3>\n		    <p>{{telepon}}</p>\n		</ion-item>\n		<ion-item>\n		    <h3><b>Alamat</b></h3>\n		    <p>{{alamat}}</p>\n		</ion-item>\n		<ion-item (click)="Logout">\n			<button ion-button outline item-end>Logout</button>\n		</ion-item>\n	</ion-list>\n</ion-content>\n`/*ion-inline-end:"D:\BGKTJL\bread\src\pages\profil\profil.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_3_angularfire2_database__["a" /* AngularFireDatabase */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */], __WEBPACK_IMPORTED_MODULE_2_angularfire2_auth__["a" /* AngularFireAuth */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */]])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_3_angularfire2_database__["a" /* AngularFireDatabase */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3_angularfire2_database__["a" /* AngularFireDatabase */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2_angularfire2_auth__["a" /* AngularFireAuth */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2_angularfire2_auth__["a" /* AngularFireAuth */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */]) === "function" && _e || Object])
     ], ProfilPage);
     return ProfilPage;
+    var _a, _b, _c, _d, _e;
 }());
 
 //# sourceMappingURL=profil.js.map
 
 /***/ }),
 
-/***/ 319:
+/***/ 320:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1462,84 +1542,6 @@ var RegisterPage = (function () {
 
 /***/ }),
 
-/***/ 320:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return KonfirmasiPembayaranPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angularfire2_database__ = __webpack_require__(16);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ionic_angular_components_alert_alert_controller__ = __webpack_require__(77);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_angularfire2_auth__ = __webpack_require__(15);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-
-/**
- * Generated class for the KonfirmasiPembayaranPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-var KonfirmasiPembayaranPage = (function () {
-    function KonfirmasiPembayaranPage(fire, db, navCtrl, navParams, alertCtrl) {
-        this.fire = fire;
-        this.db = db;
-        this.navCtrl = navCtrl;
-        this.navParams = navParams;
-        this.alertCtrl = alertCtrl;
-        this.user = this.fire.auth.currentUser;
-        this.db.object('/user/' + this.user.uid).subscribe(function (data) {
-            console.log(data);
-        });
-    }
-    KonfirmasiPembayaranPage.prototype.ionViewDidLoad = function () {
-        console.log('ionViewDidLoad KonfirmasiPembayaranPage');
-        this.itemsaia = this.navParams.get('itemgue');
-        console.log(this.itemsaia);
-    };
-    KonfirmasiPembayaranPage.prototype.konfirmasi = function () {
-        this.db.list('/konfirmasi').push({
-            namaPengirim: this.nama,
-            rekening: this.rekening,
-            bank: this.myType,
-            tanggal: this.tanggal,
-            user: this.user.uid
-        });
-        // console.log(this.cart.cartitem);
-        var alert = this.alertCtrl.create({
-            title: 'Berhasil!',
-            subTitle: 'Pesanan Akan Segera Diproses',
-            buttons: ['OK']
-        });
-        this.db.object('/transaksi/' + this.itemsaia.$key).update({
-            status: 1
-        });
-    };
-    KonfirmasiPembayaranPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-konfirmasi-pembayaran',template:/*ion-inline-start:"D:\BGKTJL\bread\src\pages\konfirmasi-pembayaran\konfirmasi-pembayaran.html"*/`<!--\n\n  Generated template for the KonfirmasiPembayaranPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n  <ion-navbar>\n\n    <ion-title>konfirmasi-pembayaran</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n\n\n\n\n    \n\n      <ion-item>\n\n        <ion-label floating>Nama Pengirim</ion-label>\n\n        <ion-input [(ngModel)]="nama" name="namaPengirim" type="text" #namaPengirim="ngModel" required></ion-input>\n\n      </ion-item>\n\n      \n\n      <ion-item>\n\n        <ion-label floating>No. Rekening</ion-label>\n\n        <ion-input [(ngModel)]="rekening" name="norek" type="number" #norek="ngModel" required></ion-input>\n\n      </ion-item>\n\n    \n\n      <ion-list radio-group [(ngModel)]="myType">\n\n        <ion-list-header>\n\n          Bank\n\n        </ion-list-header>\n\n      \n\n        <ion-item>\n\n          <ion-label>BCA</ion-label>\n\n          <ion-radio  value="bca"></ion-radio>\n\n        </ion-item>\n\n      \n\n        <ion-item>\n\n          <ion-label>BNI</ion-label>\n\n          <ion-radio value="bni"></ion-radio>\n\n        </ion-item>\n\n      \n\n        <ion-item>\n\n          <ion-label>BRI</ion-label>\n\n          <ion-radio value="bri" ></ion-radio>\n\n        </ion-item>\n\n      </ion-list>\n\n    \n\n        <ion-item>\n\n          <ion-label floating>Tanggal Pembayaran</ion-label>\n\n          <ion-datetime displayFormat="DDDD, DD MMMM YYYY" type="string" [(ngModel)]="tanggal" name="date" #date="ngModel" spellcheck="false" autocapitalize="off" required></ion-datetime>\n\n        </ion-item>\n\n    \n\n        <button ion-button  full (click)="konfirmasi()" type="submit">Konfirmasi</button>\n\n\n\n  \n\n</ion-content>\n\n<!--[disabled]="!qty.valid || !date.valid || !time.valid"--> `/*ion-inline-end:"D:\BGKTJL\bread\src\pages\konfirmasi-pembayaran\konfirmasi-pembayaran.html"*/,
-        }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_4_angularfire2_auth__["a" /* AngularFireAuth */], __WEBPACK_IMPORTED_MODULE_2_angularfire2_database__["a" /* AngularFireDatabase */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */], __WEBPACK_IMPORTED_MODULE_3_ionic_angular_components_alert_alert_controller__["a" /* AlertController */]])
-    ], KonfirmasiPembayaranPage);
-    return KonfirmasiPembayaranPage;
-}());
-
-//# sourceMappingURL=konfirmasi-pembayaran.js.map
-
-/***/ }),
-
 /***/ 321:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -1559,43 +1561,45 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__pages_detailpesanan_detailpesanan__ = __webpack_require__(163);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__pages_produkadmin_produkadmin__ = __webpack_require__(168);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__pages_profiladmin_profiladmin__ = __webpack_require__(170);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__pages_pesananadmin_pesananadmin__ = __webpack_require__(167);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_tabsadmin_tabsadmin__ = __webpack_require__(171);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_beli_beli__ = __webpack_require__(270);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_pengiriman_pengiriman__ = __webpack_require__(165);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_detail_transaksi_detail_transaksi__ = __webpack_require__(274);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__angular_platform_browser__ = __webpack_require__(54);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_ionic_angular__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__app_component__ = __webpack_require__(476);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_login_login__ = __webpack_require__(162);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__pages_register_register__ = __webpack_require__(319);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_home_home__ = __webpack_require__(269);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__pages_list_list__ = __webpack_require__(271);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__pages_keranjang_keranjang__ = __webpack_require__(272);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__pages_transaksi_transaksi__ = __webpack_require__(273);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__pages_profil_profil__ = __webpack_require__(275);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__pages_tabs_tabs__ = __webpack_require__(138);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__pages_detail_detail__ = __webpack_require__(139);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__pages_edit_profil_edit_profil__ = __webpack_require__(93);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__ionic_native_status_bar__ = __webpack_require__(315);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__ionic_native_splash_screen__ = __webpack_require__(318);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24_angularfire2__ = __webpack_require__(43);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25_angularfire2_auth__ = __webpack_require__(15);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26_angularfire2_database__ = __webpack_require__(16);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__providers_service_keranjang__ = __webpack_require__(49);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__pages_pesanan_pesanan__ = __webpack_require__(166);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__pages_edit_produk_edit_produk__ = __webpack_require__(164);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__pages_tambah_produk_tambah_produk__ = __webpack_require__(169);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__pages_konfirmasi_pembayaran_konfirmasi_pembayaran__ = __webpack_require__(163);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__pages_edit_profil_edit_profil__ = __webpack_require__(93);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__pages_detailpesanan_detailpesanan__ = __webpack_require__(164);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__pages_produkadmin_produkadmin__ = __webpack_require__(169);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_profiladmin_profiladmin__ = __webpack_require__(171);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_pesananadmin_pesananadmin__ = __webpack_require__(168);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_tabsadmin_tabsadmin__ = __webpack_require__(172);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_beli_beli__ = __webpack_require__(271);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_pengiriman_pengiriman__ = __webpack_require__(166);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_detail_transaksi_detail_transaksi__ = __webpack_require__(275);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__angular_platform_browser__ = __webpack_require__(54);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12_ionic_angular__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__app_component__ = __webpack_require__(476);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_login_login__ = __webpack_require__(162);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__pages_register_register__ = __webpack_require__(320);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__pages_home_home__ = __webpack_require__(270);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__pages_list_list__ = __webpack_require__(272);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__pages_keranjang_keranjang__ = __webpack_require__(273);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__pages_transaksi_transaksi__ = __webpack_require__(274);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__pages_profil_profil__ = __webpack_require__(276);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__pages_tabs_tabs__ = __webpack_require__(138);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__pages_detail_detail__ = __webpack_require__(139);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__ionic_native_status_bar__ = __webpack_require__(316);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__ionic_native_splash_screen__ = __webpack_require__(319);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25_angularfire2__ = __webpack_require__(43);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26_angularfire2_auth__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27_angularfire2_database__ = __webpack_require__(16);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__providers_service_keranjang__ = __webpack_require__(49);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__pages_pesanan_pesanan__ = __webpack_require__(167);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__pages_edit_produk_edit_produk__ = __webpack_require__(165);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_31__pages_tambah_produk_tambah_produk__ = __webpack_require__(170);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -1639,34 +1643,35 @@ var AppModule = (function () {
     function AppModule() {
     }
     AppModule = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_8__angular_core__["I" /* NgModule */])({
+        Object(__WEBPACK_IMPORTED_MODULE_10__angular_core__["I" /* NgModule */])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_11__app_component__["a" /* MyApp */],
-                __WEBPACK_IMPORTED_MODULE_14__pages_home_home__["a" /* HomePage */],
-                __WEBPACK_IMPORTED_MODULE_15__pages_list_list__["a" /* ListPage */],
-                __WEBPACK_IMPORTED_MODULE_16__pages_keranjang_keranjang__["a" /* KeranjangPage */],
-                __WEBPACK_IMPORTED_MODULE_17__pages_transaksi_transaksi__["a" /* TransaksiPage */],
-                __WEBPACK_IMPORTED_MODULE_18__pages_profil_profil__["a" /* ProfilPage */],
-                __WEBPACK_IMPORTED_MODULE_19__pages_tabs_tabs__["a" /* TabsPage */],
-                __WEBPACK_IMPORTED_MODULE_20__pages_detail_detail__["a" /* DetailPage */],
-                __WEBPACK_IMPORTED_MODULE_12__pages_login_login__["a" /* LoginPage */],
-                __WEBPACK_IMPORTED_MODULE_13__pages_register_register__["a" /* RegisterPage */],
-                __WEBPACK_IMPORTED_MODULE_7__pages_detail_transaksi_detail_transaksi__["a" /* DetailTransaksiPage */],
-                __WEBPACK_IMPORTED_MODULE_6__pages_pengiriman_pengiriman__["a" /* PengirimanPage */],
-                __WEBPACK_IMPORTED_MODULE_28__pages_pesanan_pesanan__["a" /* PesananPage */],
-                __WEBPACK_IMPORTED_MODULE_5__pages_beli_beli__["a" /* BeliPage */],
-                __WEBPACK_IMPORTED_MODULE_4__pages_tabsadmin_tabsadmin__["a" /* TabsadminPage */],
-                __WEBPACK_IMPORTED_MODULE_3__pages_pesananadmin_pesananadmin__["a" /* PesananadminPage */],
-                __WEBPACK_IMPORTED_MODULE_1__pages_produkadmin_produkadmin__["a" /* ProdukadminPage */],
-                __WEBPACK_IMPORTED_MODULE_2__pages_profiladmin_profiladmin__["a" /* ProfiladminPage */],
-                __WEBPACK_IMPORTED_MODULE_0__pages_detailpesanan_detailpesanan__["a" /* DetailpesananPage */],
-                __WEBPACK_IMPORTED_MODULE_29__pages_edit_produk_edit_produk__["a" /* EditProdukPage */],
-                __WEBPACK_IMPORTED_MODULE_30__pages_tambah_produk_tambah_produk__["a" /* TambahProdukPage */],
-                __WEBPACK_IMPORTED_MODULE_21__pages_edit_profil_edit_profil__["a" /* EditProfilPage */]
+                __WEBPACK_IMPORTED_MODULE_13__app_component__["a" /* MyApp */],
+                __WEBPACK_IMPORTED_MODULE_16__pages_home_home__["a" /* HomePage */],
+                __WEBPACK_IMPORTED_MODULE_17__pages_list_list__["a" /* ListPage */],
+                __WEBPACK_IMPORTED_MODULE_18__pages_keranjang_keranjang__["a" /* KeranjangPage */],
+                __WEBPACK_IMPORTED_MODULE_19__pages_transaksi_transaksi__["a" /* TransaksiPage */],
+                __WEBPACK_IMPORTED_MODULE_20__pages_profil_profil__["a" /* ProfilPage */],
+                __WEBPACK_IMPORTED_MODULE_21__pages_tabs_tabs__["a" /* TabsPage */],
+                __WEBPACK_IMPORTED_MODULE_22__pages_detail_detail__["a" /* DetailPage */],
+                __WEBPACK_IMPORTED_MODULE_14__pages_login_login__["a" /* LoginPage */],
+                __WEBPACK_IMPORTED_MODULE_15__pages_register_register__["a" /* RegisterPage */],
+                __WEBPACK_IMPORTED_MODULE_9__pages_detail_transaksi_detail_transaksi__["a" /* DetailTransaksiPage */],
+                __WEBPACK_IMPORTED_MODULE_8__pages_pengiriman_pengiriman__["a" /* PengirimanPage */],
+                __WEBPACK_IMPORTED_MODULE_29__pages_pesanan_pesanan__["a" /* PesananPage */],
+                __WEBPACK_IMPORTED_MODULE_7__pages_beli_beli__["a" /* BeliPage */],
+                __WEBPACK_IMPORTED_MODULE_6__pages_tabsadmin_tabsadmin__["a" /* TabsadminPage */],
+                __WEBPACK_IMPORTED_MODULE_5__pages_pesananadmin_pesananadmin__["a" /* PesananadminPage */],
+                __WEBPACK_IMPORTED_MODULE_3__pages_produkadmin_produkadmin__["a" /* ProdukadminPage */],
+                __WEBPACK_IMPORTED_MODULE_4__pages_profiladmin_profiladmin__["a" /* ProfiladminPage */],
+                __WEBPACK_IMPORTED_MODULE_2__pages_detailpesanan_detailpesanan__["a" /* DetailpesananPage */],
+                __WEBPACK_IMPORTED_MODULE_30__pages_edit_produk_edit_produk__["a" /* EditProdukPage */],
+                __WEBPACK_IMPORTED_MODULE_31__pages_tambah_produk_tambah_produk__["a" /* TambahProdukPage */],
+                __WEBPACK_IMPORTED_MODULE_1__pages_edit_profil_edit_profil__["a" /* EditProfilPage */],
+                __WEBPACK_IMPORTED_MODULE_0__pages_konfirmasi_pembayaran_konfirmasi_pembayaran__["a" /* KonfirmasiPembayaranPage */]
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_9__angular_platform_browser__["a" /* BrowserModule */],
-                __WEBPACK_IMPORTED_MODULE_10_ionic_angular__["d" /* IonicModule */].forRoot(__WEBPACK_IMPORTED_MODULE_11__app_component__["a" /* MyApp */], {}, {
+                __WEBPACK_IMPORTED_MODULE_11__angular_platform_browser__["a" /* BrowserModule */],
+                __WEBPACK_IMPORTED_MODULE_12_ionic_angular__["d" /* IonicModule */].forRoot(__WEBPACK_IMPORTED_MODULE_13__app_component__["a" /* MyApp */], {}, {
                     links: [
                         { loadChildren: '../pages/detailpesanan/detailpesanan.module#DetailpesananPageModule', name: 'DetailpesananPage', segment: 'detailpesanan', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/edit-produk/edit-produk.module#EditProdukPageModule', name: 'EditProdukPage', segment: 'edit-produk', priority: 'low', defaultHistory: [] },
@@ -1674,48 +1679,49 @@ var AppModule = (function () {
                         { loadChildren: '../pages/konfirmasi-pembayaran/konfirmasi-pembayaran.module#KonfirmasiPembayaranPageModule', name: 'KonfirmasiPembayaranPage', segment: 'konfirmasi-pembayaran', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/pengiriman/pengiriman.module#PengirimanPageModule', name: 'PengirimanPage', segment: 'pengiriman', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/pesanan/pesanan.module#PesananPageModule', name: 'PesananPage', segment: 'pesanan', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/picture/picture.module#PicturePageModule', name: 'PicturePage', segment: 'picture', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/pesananadmin/pesananadmin.module#PesananadminPageModule', name: 'PesananadminPage', segment: 'pesananadmin', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/picture/picture.module#PicturePageModule', name: 'PicturePage', segment: 'picture', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/produkadmin/produkadmin.module#ProdukadminPageModule', name: 'ProdukadminPage', segment: 'produkadmin', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/profiladmin/profiladmin.module#ProfiladminPageModule', name: 'ProfiladminPage', segment: 'profiladmin', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/tabsadmin/tabsadmin.module#TabsadminPageModule', name: 'TabsadminPage', segment: 'tabsadmin', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/tambah-produk/tambah-produk.module#TambahProdukPageModule', name: 'TambahProdukPage', segment: 'tambah-produk', priority: 'low', defaultHistory: [] }
                     ]
                 }),
-                __WEBPACK_IMPORTED_MODULE_24_angularfire2__["a" /* AngularFireModule */].initializeApp(config),
-                __WEBPACK_IMPORTED_MODULE_25_angularfire2_auth__["b" /* AngularFireAuthModule */],
-                __WEBPACK_IMPORTED_MODULE_26_angularfire2_database__["b" /* AngularFireDatabaseModule */]
+                __WEBPACK_IMPORTED_MODULE_25_angularfire2__["a" /* AngularFireModule */].initializeApp(config),
+                __WEBPACK_IMPORTED_MODULE_26_angularfire2_auth__["b" /* AngularFireAuthModule */],
+                __WEBPACK_IMPORTED_MODULE_27_angularfire2_database__["b" /* AngularFireDatabaseModule */]
             ],
-            bootstrap: [__WEBPACK_IMPORTED_MODULE_10_ionic_angular__["b" /* IonicApp */]],
+            bootstrap: [__WEBPACK_IMPORTED_MODULE_12_ionic_angular__["b" /* IonicApp */]],
             entryComponents: [
-                __WEBPACK_IMPORTED_MODULE_11__app_component__["a" /* MyApp */],
-                __WEBPACK_IMPORTED_MODULE_14__pages_home_home__["a" /* HomePage */],
-                __WEBPACK_IMPORTED_MODULE_15__pages_list_list__["a" /* ListPage */],
-                __WEBPACK_IMPORTED_MODULE_16__pages_keranjang_keranjang__["a" /* KeranjangPage */],
-                __WEBPACK_IMPORTED_MODULE_17__pages_transaksi_transaksi__["a" /* TransaksiPage */],
-                __WEBPACK_IMPORTED_MODULE_18__pages_profil_profil__["a" /* ProfilPage */],
-                __WEBPACK_IMPORTED_MODULE_19__pages_tabs_tabs__["a" /* TabsPage */],
-                __WEBPACK_IMPORTED_MODULE_20__pages_detail_detail__["a" /* DetailPage */],
-                __WEBPACK_IMPORTED_MODULE_12__pages_login_login__["a" /* LoginPage */],
-                __WEBPACK_IMPORTED_MODULE_13__pages_register_register__["a" /* RegisterPage */],
-                __WEBPACK_IMPORTED_MODULE_7__pages_detail_transaksi_detail_transaksi__["a" /* DetailTransaksiPage */],
-                __WEBPACK_IMPORTED_MODULE_6__pages_pengiriman_pengiriman__["a" /* PengirimanPage */],
-                __WEBPACK_IMPORTED_MODULE_28__pages_pesanan_pesanan__["a" /* PesananPage */],
-                __WEBPACK_IMPORTED_MODULE_5__pages_beli_beli__["a" /* BeliPage */],
-                __WEBPACK_IMPORTED_MODULE_4__pages_tabsadmin_tabsadmin__["a" /* TabsadminPage */],
-                __WEBPACK_IMPORTED_MODULE_3__pages_pesananadmin_pesananadmin__["a" /* PesananadminPage */],
-                __WEBPACK_IMPORTED_MODULE_2__pages_profiladmin_profiladmin__["a" /* ProfiladminPage */],
-                __WEBPACK_IMPORTED_MODULE_1__pages_produkadmin_produkadmin__["a" /* ProdukadminPage */],
-                __WEBPACK_IMPORTED_MODULE_0__pages_detailpesanan_detailpesanan__["a" /* DetailpesananPage */],
-                __WEBPACK_IMPORTED_MODULE_29__pages_edit_produk_edit_produk__["a" /* EditProdukPage */],
-                __WEBPACK_IMPORTED_MODULE_30__pages_tambah_produk_tambah_produk__["a" /* TambahProdukPage */],
-                __WEBPACK_IMPORTED_MODULE_21__pages_edit_profil_edit_profil__["a" /* EditProfilPage */]
+                __WEBPACK_IMPORTED_MODULE_13__app_component__["a" /* MyApp */],
+                __WEBPACK_IMPORTED_MODULE_16__pages_home_home__["a" /* HomePage */],
+                __WEBPACK_IMPORTED_MODULE_17__pages_list_list__["a" /* ListPage */],
+                __WEBPACK_IMPORTED_MODULE_18__pages_keranjang_keranjang__["a" /* KeranjangPage */],
+                __WEBPACK_IMPORTED_MODULE_19__pages_transaksi_transaksi__["a" /* TransaksiPage */],
+                __WEBPACK_IMPORTED_MODULE_20__pages_profil_profil__["a" /* ProfilPage */],
+                __WEBPACK_IMPORTED_MODULE_21__pages_tabs_tabs__["a" /* TabsPage */],
+                __WEBPACK_IMPORTED_MODULE_22__pages_detail_detail__["a" /* DetailPage */],
+                __WEBPACK_IMPORTED_MODULE_14__pages_login_login__["a" /* LoginPage */],
+                __WEBPACK_IMPORTED_MODULE_15__pages_register_register__["a" /* RegisterPage */],
+                __WEBPACK_IMPORTED_MODULE_9__pages_detail_transaksi_detail_transaksi__["a" /* DetailTransaksiPage */],
+                __WEBPACK_IMPORTED_MODULE_8__pages_pengiriman_pengiriman__["a" /* PengirimanPage */],
+                __WEBPACK_IMPORTED_MODULE_29__pages_pesanan_pesanan__["a" /* PesananPage */],
+                __WEBPACK_IMPORTED_MODULE_7__pages_beli_beli__["a" /* BeliPage */],
+                __WEBPACK_IMPORTED_MODULE_6__pages_tabsadmin_tabsadmin__["a" /* TabsadminPage */],
+                __WEBPACK_IMPORTED_MODULE_5__pages_pesananadmin_pesananadmin__["a" /* PesananadminPage */],
+                __WEBPACK_IMPORTED_MODULE_4__pages_profiladmin_profiladmin__["a" /* ProfiladminPage */],
+                __WEBPACK_IMPORTED_MODULE_3__pages_produkadmin_produkadmin__["a" /* ProdukadminPage */],
+                __WEBPACK_IMPORTED_MODULE_2__pages_detailpesanan_detailpesanan__["a" /* DetailpesananPage */],
+                __WEBPACK_IMPORTED_MODULE_30__pages_edit_produk_edit_produk__["a" /* EditProdukPage */],
+                __WEBPACK_IMPORTED_MODULE_31__pages_tambah_produk_tambah_produk__["a" /* TambahProdukPage */],
+                __WEBPACK_IMPORTED_MODULE_1__pages_edit_profil_edit_profil__["a" /* EditProfilPage */],
+                __WEBPACK_IMPORTED_MODULE_0__pages_konfirmasi_pembayaran_konfirmasi_pembayaran__["a" /* KonfirmasiPembayaranPage */]
             ],
             providers: [
-                __WEBPACK_IMPORTED_MODULE_22__ionic_native_status_bar__["a" /* StatusBar */],
-                __WEBPACK_IMPORTED_MODULE_23__ionic_native_splash_screen__["a" /* SplashScreen */],
-                __WEBPACK_IMPORTED_MODULE_27__providers_service_keranjang__["a" /* CartService */],
-                { provide: __WEBPACK_IMPORTED_MODULE_8__angular_core__["u" /* ErrorHandler */], useClass: __WEBPACK_IMPORTED_MODULE_10_ionic_angular__["c" /* IonicErrorHandler */] }
+                __WEBPACK_IMPORTED_MODULE_23__ionic_native_status_bar__["a" /* StatusBar */],
+                __WEBPACK_IMPORTED_MODULE_24__ionic_native_splash_screen__["a" /* SplashScreen */],
+                __WEBPACK_IMPORTED_MODULE_28__providers_service_keranjang__["a" /* CartService */],
+                { provide: __WEBPACK_IMPORTED_MODULE_10__angular_core__["u" /* ErrorHandler */], useClass: __WEBPACK_IMPORTED_MODULE_12_ionic_angular__["c" /* IonicErrorHandler */] }
             ]
         })
     ], AppModule);
@@ -1733,8 +1739,8 @@ var AppModule = (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MyApp; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(315);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(318);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(316);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(319);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_login_login__ = __webpack_require__(162);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1886,11 +1892,12 @@ var EditProfilPage = (function () {
     };
     EditProfilPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-edit-profil',template:/*ion-inline-start:"D:\BGKTJL\bread\src\pages\edit-profil\edit-profil.html"*/`<!--\n\n  Generated template for the EditProfilPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n  <ion-navbar>\n\n    <ion-title>Edit Profil</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n	<ion-list>\n\n		<ion-item (click)="EditFoto()">\n\n			<ion-row>\n\n				<img src="http://www.pvhc.net/img148/awvxzwhtrrtafvkavddd.png" width="35" height="30"/>\n\n				<ion-col><p>edit foto</p></ion-col>\n\n			</ion-row>\n\n		</ion-item>\n\n\n\n	  <ion-item>\n\n	    <ion-label stacked>Username</ion-label>\n\n	    <ion-input type="text" value="{{nama}}" [(ngModel)]="nama" name="nama" #user="ngModel"></ion-input>\n\n	  </ion-item>\n\n\n\n	  <ion-item>\n\n	    <ion-label stacked>Nomor Telepon</ion-label>\n\n	    <ion-input type="text[0-9]" value="{{telepon}}"></ion-input>\n\n		</ion-item>\n\n		\n\n	  <ion-item>\n\n	    <ion-label stacked>Alamat</ion-label> \n\n	    <ion-textarea type="text" value="{{alamat}}"></ion-textarea>\n\n	  </ion-item>\n\n	</ion-list>\n\n\n\n	<button ion-button full (click)="simpan()">Simpan</button>\n\n</ion-content>\n\n`/*ion-inline-end:"D:\BGKTJL\bread\src\pages\edit-profil\edit-profil.html"*/,
+            selector: 'page-edit-profil',template:/*ion-inline-start:"D:\BGKTJL\bread\src\pages\edit-profil\edit-profil.html"*/`<!--\n  Generated template for the EditProfilPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>Edit Profil</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n	<ion-list>\n		<ion-item (click)="EditFoto()">\n			<ion-row>\n				<img src="http://www.pvhc.net/img148/awvxzwhtrrtafvkavddd.png" width="35" height="30"/>\n				<ion-col><p>edit foto</p></ion-col>\n			</ion-row>\n		</ion-item>\n\n	  <ion-item>\n	    <ion-label stacked>Username</ion-label>\n	    <ion-input type="text" value="{{nama}}" [(ngModel)]="nama" name="nama" #user="ngModel"></ion-input>\n	  </ion-item>\n\n	  <ion-item>\n	    <ion-label stacked>Nomor Telepon</ion-label>\n	    <ion-input type="text[0-9]" value="{{telepon}}"></ion-input>\n		</ion-item>\n		\n	  <ion-item>\n	    <ion-label stacked>Alamat</ion-label> \n	    <ion-textarea type="text" value="{{alamat}}"></ion-textarea>\n	  </ion-item>\n	</ion-list>\n\n	<button ion-button full (click)="simpan()">Simpan</button>\n</ion-content>\n`/*ion-inline-end:"D:\BGKTJL\bread\src\pages\edit-profil\edit-profil.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_3_angularfire2_database__["a" /* AngularFireDatabase */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */], __WEBPACK_IMPORTED_MODULE_2_angularfire2_auth__["a" /* AngularFireAuth */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */]])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_3_angularfire2_database__["a" /* AngularFireDatabase */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3_angularfire2_database__["a" /* AngularFireDatabase */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2_angularfire2_auth__["a" /* AngularFireAuth */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2_angularfire2_auth__["a" /* AngularFireAuth */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */]) === "function" && _e || Object])
     ], EditProfilPage);
     return EditProfilPage;
+    var _a, _b, _c, _d, _e;
 }());
 
 //# sourceMappingURL=edit-profil.js.map
