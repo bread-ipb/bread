@@ -20,21 +20,10 @@ import { AngularFireDatabase } from 'angularfire2/database';
 })
 export class PengirimanPage {
   myType:string;
-<<<<<<< HEAD
-  PesananPage:any;
-=======
   namapenerima:string;
   notelp:string;
   alamat:string;
-<<<<<<< HEAD
-<<<<<<< HEAD
   PesananPage:any;
-=======
->>>>>>> 368391a52aa88afd0733ed7cb6bb846e1a871cb1
->>>>>>> 8df008245650c5a15ffc76cf8d60fbf2c18491a8
-=======
->>>>>>> 368391a52aa88afd0733ed7cb6bb846e1a871cb1
->>>>>>> 8df008245650c5a15ffc76cf8d60fbf2c18491a8
   constructor(public navCtrl: NavController,private fireauth: AngularFireAuth,public db:AngularFireDatabase, public navParams: NavParams,public cart:CartService) {
     this.PesananPage=PesananPage;
   }
@@ -59,15 +48,7 @@ export class PengirimanPage {
     console.log(this.myType);
     this.cart.cartitem=[];
     this.cart.totalHarga=0;
-<<<<<<< HEAD
-<<<<<<< HEAD
 
-=======
-  
->>>>>>> 8df008245650c5a15ffc76cf8d60fbf2c18491a8
-=======
-  
->>>>>>> 8df008245650c5a15ffc76cf8d60fbf2c18491a8
   
   }
 }
