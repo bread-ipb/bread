@@ -27,7 +27,11 @@ export class PengirimanPage {
   notelp:string;
   alamat:string;
 <<<<<<< HEAD
+<<<<<<< HEAD
   PesananPage:any;
+=======
+>>>>>>> 368391a52aa88afd0733ed7cb6bb846e1a871cb1
+>>>>>>> 8df008245650c5a15ffc76cf8d60fbf2c18491a8
 =======
 >>>>>>> 368391a52aa88afd0733ed7cb6bb846e1a871cb1
 >>>>>>> 8df008245650c5a15ffc76cf8d60fbf2c18491a8
@@ -56,7 +60,11 @@ export class PengirimanPage {
     this.cart.cartitem=[];
     this.cart.totalHarga=0;
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+  
+>>>>>>> 8df008245650c5a15ffc76cf8d60fbf2c18491a8
 =======
   
 >>>>>>> 8df008245650c5a15ffc76cf8d60fbf2c18491a8
