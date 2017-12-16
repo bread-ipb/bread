@@ -4,6 +4,8 @@ import { AngularFireAuth } from 'angularfire2/auth';
 import { TabsPage } from '../tabs/tabs'
 import { AngularFireDatabase } from 'angularfire2/database';
 import { EditProfilPage } from '../edit-profil/edit-profil';
+import { App } from 'ionic-angular';
+import { LoginPage } from '../login/login';
 
 /**
  * Generated class for the ProfiladminPage page.
@@ -23,7 +25,7 @@ export class ProfiladminPage {
   telepon: number;
   alamat:string;
 
-  constructor(public db : AngularFireDatabase, private alertCtrl: AlertController,private fire:AngularFireAuth,public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public app : App, public db : AngularFireDatabase, private alertCtrl: AlertController,private fire:AngularFireAuth,public navCtrl: NavController, public navParams: NavParams) {
     var user = this.fire.auth.currentUser;
     console.log(user.uid);    //user.uid
     this.db.object('/user/'+user.uid).subscribe(data =>{
@@ -40,5 +42,30 @@ export class ProfiladminPage {
   }
   EditProfil(){
     this.navCtrl.push(EditProfilPage);
+}
+
+Logout() {
+  let confirm = this.alertCtrl.create({
+    title: 'Apakah Anda Yakin?',
+    subTitle: 'Profil Anda akan disimpan. Kami akan menunggu order Anda di BReAD',
+    buttons: [
+      {
+        text: 'Tidak',
+        handler: () => {
+          console.log('Disagree clicked');
+        }
+      },
+      {
+        text: 'Ya',
+        handler: () => {
+          console.log('Agree clicked')
+          // this.navCtrl.setRoot(MyApp);
+          this.fire.auth.signOut;
+          this.app.getRootNav().setRoot(LoginPage);
+  }
+  }
+]
+});
+confirm.present();
 }
 }
