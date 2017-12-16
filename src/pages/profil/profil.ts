@@ -5,6 +5,7 @@ import { TabsPage } from '../tabs/tabs'
 import { AngularFireDatabase } from 'angularfire2/database';
 import { EditProfilPage } from '../edit-profil/edit-profil';
 import { LoginPage } from '../login/login';
+import { App } from 'ionic-angular';
 
 /**
  * Generated class for the ProfilPage page.
@@ -23,7 +24,7 @@ export class ProfilPage {
   telepon: number;
   alamat:string;
   
-  constructor(public db : AngularFireDatabase, private alertCtrl: AlertController,private fire:AngularFireAuth,public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public app : App, public db : AngularFireDatabase, private alertCtrl: AlertController,private fire:AngularFireAuth,public navCtrl: NavController, public navParams: NavParams) {
     var user = this.fire.auth.currentUser;
     console.log(user.uid);    //user.uid
     this.db.object('/user/'+user.uid).subscribe(data =>{
@@ -60,7 +61,7 @@ export class ProfilPage {
             console.log('Agree clicked')
             // this.navCtrl.setRoot(MyApp);
             this.fire.auth.signOut;
-            this.navCtrl.setRoot(LoginPage)
+            this.app.getRootNav().setRoot(LoginPage);
     }
     }
   ]

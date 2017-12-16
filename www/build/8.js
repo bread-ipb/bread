@@ -27,7 +27,7 @@ var KonfirmasiPembayaranPageModule = (function () {
                 __WEBPACK_IMPORTED_MODULE_2__konfirmasi_pembayaran__["a" /* KonfirmasiPembayaranPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__konfirmasi_pembayaran__["a" /* KonfirmasiPembayaranPage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__konfirmasi_pembayaran__["a" /* KonfirmasiPembayaranPage */]),
             ],
         })
     ], KonfirmasiPembayaranPageModule);

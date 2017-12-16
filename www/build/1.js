@@ -27,7 +27,7 @@ var TambahProdukPageModule = (function () {
                 __WEBPACK_IMPORTED_MODULE_2__tambah_produk__["a" /* TambahProdukPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__tambah_produk__["a" /* TambahProdukPage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__tambah_produk__["a" /* TambahProdukPage */]),
             ],
         })
     ], TambahProdukPageModule);

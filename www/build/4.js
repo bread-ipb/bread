@@ -27,7 +27,7 @@ var ProdukadminPageModule = (function () {
                 __WEBPACK_IMPORTED_MODULE_2__produkadmin__["a" /* ProdukadminPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__produkadmin__["a" /* ProdukadminPage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__produkadmin__["a" /* ProdukadminPage */]),
             ],
         })
     ], ProdukadminPageModule);
