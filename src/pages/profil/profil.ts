@@ -4,6 +4,7 @@ import { AngularFireAuth } from 'angularfire2/auth';
 import { TabsPage } from '../tabs/tabs'
 import { AngularFireDatabase } from 'angularfire2/database';
 import { EditProfilPage } from '../edit-profil/edit-profil';
+import { LoginPage } from '../login/login';
 
 /**
  * Generated class for the ProfilPage page.
@@ -42,4 +43,28 @@ export class ProfilPage {
   		this.navCtrl.push(EditProfilPage);
   }
 
+  Logout() {
+    let confirm = this.alertCtrl.create({
+      title: 'Apakah Anda Yakin?',
+      subTitle: 'Profil Anda akan disimpan. Kami akan menunggu order Anda di BReAD',
+      buttons: [
+        {
+          text: 'Tidak',
+          handler: () => {
+            console.log('Disagree clicked');
+          }
+        },
+        {
+          text: 'Ya',
+          handler: () => {
+            console.log('Agree clicked')
+            // this.navCtrl.setRoot(MyApp);
+            this.fire.auth.signOut;
+            this.navCtrl.setRoot(LoginPage)
+    }
+    }
+  ]
+  });
+  confirm.present();
+  }
 }

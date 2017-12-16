@@ -25,7 +25,8 @@ import { NgForm } from '@angular/forms/src/directives/ng_form';
 export class LoginPage {
   uname: string;
   password: string;
- 
+  id:string;
+
   submitted=false;
   constructor(private fire:AngularFireAuth,public navCtrl: NavController, public navParams: NavParams,public alertCtrl: AlertController) {
   }
