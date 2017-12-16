@@ -16,14 +16,14 @@ import { PesananadminPage } from '../pesananadmin/pesananadmin';
   templateUrl: 'tabsadmin.html',
   template: `
   <ion-tabs>
-    <ion-tab tabIcon="ios-home" [root]="tabOne" tabBadge="3" tabBadgeStyle="danger"></ion-tab>
+    <ion-tab tabIcon="ios-home" [root]="tabOne"></ion-tab>
     <ion-tab tabIcon="ios-pizza" [root]="tabTwo"></ion-tab>
     <ion-tab tabIcon="ios-contact" [root]="tabThree"></ion-tab>
   </ion-tabs>
   `
 })
 export class TabsadminPage {
-
+  //tabBadge="3" tabBadgeStyle="danger"
   tabOne:any;
   tabTwo:any;
   tabThree:any;

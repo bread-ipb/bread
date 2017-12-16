@@ -469,11 +469,12 @@ var TabsadminPage = (function () {
     TabsadminPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_2__angular_core__["m" /* Component */])({
             selector: 'page-tabsadmin',template:/*ion-inline-start:"C:\Users\Luthfi\Documents\GitHub\bread\src\pages\tabsadmin\tabsadmin.html"*/`<ion-tabs>\n\n    <ion-tab [root]="pesananadminRoot" tabTitle="Pesananadmin" tabIcon="information-circle"></ion-tab>\n\n    <ion-tab [root]="produkadminRoot" tabTitle="Produkadmin" tabIcon="information-circle"></ion-tab>\n\n    <ion-tab [root]="profiladminRoot" tabTitle="Profiladmin" tabIcon="information-circle"></ion-tab>\n\n</ion-tabs>\n\n`/*ion-inline-end:"C:\Users\Luthfi\Documents\GitHub\bread\src\pages\tabsadmin\tabsadmin.html"*/,
-            template: "\n  <ion-tabs>\n    <ion-tab tabIcon=\"ios-home\" [root]=\"tabOne\" tabBadge=\"3\" tabBadgeStyle=\"danger\"></ion-tab>\n    <ion-tab tabIcon=\"ios-pizza\" [root]=\"tabTwo\"></ion-tab>\n    <ion-tab tabIcon=\"ios-contact\" [root]=\"tabThree\"></ion-tab>\n  </ion-tabs>\n  "
+            template: "\n  <ion-tabs>\n    <ion-tab tabIcon=\"ios-home\" [root]=\"tabOne\"></ion-tab>\n    <ion-tab tabIcon=\"ios-pizza\" [root]=\"tabTwo\"></ion-tab>\n    <ion-tab tabIcon=\"ios-contact\" [root]=\"tabThree\"></ion-tab>\n  </ion-tabs>\n  "
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_3_ionic_angular__["g" /* NavController */]])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["g" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["g" /* NavController */]) === "function" && _a || Object])
     ], TabsadminPage);
     return TabsadminPage;
+    var _a;
 }());
 
 //# sourceMappingURL=tabsadmin.js.map
