@@ -47,9 +47,10 @@
       <ion-radio value="bri" ></ion-radio>
     </ion-item>
   </ion-list>
+  
   <ion-footer>
-			<ion-col>
-				-				<button class="ButtonMasuk" ion-button color="AyoDermawan" [navPush]="PesananPage" (click)="pesanan()" [navParams]={biji:this.cart.totalHarga,atm:this.myType} full><p class="ButtonWord">Lanjutkan</p></button>
-			</ion-col>
-		</ion-footer>
+		<ion-col>
+			<button class="ButtonMasuk" ion-button color="AyoDermawan" [navPush]="PesananPage" (click)="pesanan()" [navParams]={biji:this.cart.totalHarga,atm:this.myType} full><p class="ButtonWord">Lanjutkan</p></button>
+		</ion-col>
+	</ion-footer>
 </ion-content>

@@ -17,21 +17,20 @@
     <ion-item *ngFor="let item of detailtransaksi">
           <ion-thumbnail item-start><img src="http://www.seafast.ipb.ac.id/images/stories/ilustrasi/muffin.jpg"height="60" width="65"/>
           </ion-thumbnail>
-            <h6>{{ item.name }}</h6> <h5>{{ item.quantity }}</h5>
-          <p>Jadwal Pengiriman {{ item.tanggal}} {{item.waktu}}</p>
-      </ion-item>
+          <h6>{{ item.name }}</h6>
+          <h6>Quantity : {{ item.quantity }}</h6>
+          <h6>Jadwal Pengiriman :</h6>
+          <p> {{ item.tanggal}} <br> {{item.waktu}} </p>
+    </ion-item>
   <h5>Order #{{index+1}}</h5><ion-badge [hidden]="itemsaya.status!=0" class='belumDibayar'>Belum Dibayar</ion-badge>
   <ion-badge [hidden]="itemsaya.status!=1" >Diproses</ion-badge>
   <ion-badge [hidden]="itemsaya.status!=2" class="sudahDikirim">Selesai</ion-badge>
-    <p>Total Pembayaran:<b>Rp.{{itemsaya.total}}</b></p>
-    <h6>Transfer ke:</h6>
-    <b [hidden]="itemsaya.pembayaran!='bca'">BCA dengan Nomer Rekening 14045</b>
-    <b [hidden]="itemsaya.pembayaran!='bni'">BNI dengan Nomer Rekening 14045</b>
-    <b [hidden]="itemsaya.pembayaran!='bri'">BRI dengan Nomer Rekening 14045</b>
-    <h6>Dikirim:</h6>
-   
-    <h6>Alamat:</h6>
-    <p>{{itemsaya.alamat}}</p>
+    <p>Total Pembayaran :<b> Rp.{{itemsaya.total}}</b></p>
+    <p>Dikirim ke alamat :<b> {{itemsaya.alamat}}</b></p>
+    <h6>Transfer ke :</h6>
+    <b [hidden]="itemsaya.pembayaran!='bca'">BCA dengan Nomer Rekening 731 025 2527 a/n Denny</b>
+    <b [hidden]="itemsaya.pembayaran!='bni'">BNI dengan Nomer Rekening 023 827 2088 a/n Denny</b>
+    <b [hidden]="itemsaya.pembayaran!='bri'">BRI dengan Nomer Rekening 034 101 000 743 303 a/n Denny</b>
 </ion-content>
 <ion-footer>
   <ion-toolbar color="light" [navPush]="KonfirmasiPage" [navParams]="{itemgue:itemsaya}">
