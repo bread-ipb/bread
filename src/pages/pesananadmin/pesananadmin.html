@@ -13,7 +13,14 @@
   
   
   <ion-content padding>
-  
+    <ion-card>
+      <ion-card-header>
+        Bar Chart
+      </ion-card-header>
+      <ion-card-content>
+        <canvas #barCanvas></canvas>
+      </ion-card-content>
+    </ion-card>
     <ion-card *ngFor="let item of transaksi; let i = index;" [navPush]="DetailpesananPage" [navParams]="{detailtrans:item.$key,itemku:item}">
       <ion-item>
         <ion-thumbnail item-start>
