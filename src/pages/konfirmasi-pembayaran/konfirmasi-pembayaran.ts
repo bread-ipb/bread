@@ -37,6 +37,15 @@ export class KonfirmasiPembayaranPage {
     this.itemsaia=this.navParams.get('itemgue');
     console.log(this.itemsaia);
   }
+
+  alert(message: string) {
+    this.alertCtrl.create({
+      title: 'Info!',
+      subTitle: message,
+      buttons: ['OK']
+    }).present();
+  }
+
   konfirmasi(){
     this.db.list('/konfirmasi').push({
       namaPengirim:this.nama,
@@ -47,13 +56,16 @@ export class KonfirmasiPembayaranPage {
     });
    // console.log(this.cart.cartitem);
    let alert = this.alertCtrl.create({
-     title: 'Berhasil!',
-     subTitle: 'Pesanan Akan Segera Diproses',
-     buttons: ['OK']
-     
-   });
+    title: 'Berhasil Konfirmasi!',
+    subTitle: 'Barang akan segera dikirim.',
+    buttons: ['OK']
+    
+  });
+  alert.present();
    this.db.object('/transaksi/'+this.itemsaia.$key).update({
      status:1
    });
+   this.navCtrl.pop();
+   this.navCtrl.pop();
   }
 }
