@@ -29,12 +29,12 @@
 
 	  <ion-item>
 	    <ion-label stacked>Nomor Telepon</ion-label>
-	    <ion-input type="text[0-9]" value="{{telepon}}"></ion-input>
+	    <ion-input type="text[0-9]" value="{{telepon}}" [(ngModel)]="telepon"></ion-input>
 		</ion-item>
 		
 	  <ion-item>
 	    <ion-label stacked>Alamat</ion-label> 
-	    <ion-textarea type="text" value="{{alamat}}"></ion-textarea>
+	    <ion-textarea type="text" value="{{alamat}}" [(ngModel)]="alamat"></ion-textarea>
 	  </ion-item>
 	</ion-list>
 

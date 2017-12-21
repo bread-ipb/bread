@@ -21,7 +21,7 @@
         <canvas #barCanvas></canvas>
       </ion-card-content>
     </ion-card>
-    <ion-card *ngFor="let item of transaksi; let i = index;" [navPush]="DetailpesananPage" [navParams]="{detailtrans:item.$key,itemku:item}">
+    <ion-card *ngFor="let item of transaksi; let i = index;" [navPush]="DetailpesananPage" [navParams]="{detailtrans:item.$key,itemku:item,statusnya:item.status}">
       <ion-item>
         <ion-thumbnail item-start>
           <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3AEQwFb78GZahJMVYc3JiezkKPhHHh7Eezrvm739BFSqrGT3iNQ"/>
@@ -31,7 +31,9 @@
             <ion-item>
               <h5>Status:</h5><p><ion-badge [hidden]="item.status!=0" class='belumDibayar'>Belum Dibayar</ion-badge></p>
                 <p><ion-badge [hidden]="item.status!=1" >Diproses</ion-badge></p>
+                <p><ion-badge [hidden]="item.status!=2" class="sudahDikirim">Selesai</ion-badge></p>
             </ion-item>
+            
           </ion-card-content>
       </ion-item>
     </ion-card>

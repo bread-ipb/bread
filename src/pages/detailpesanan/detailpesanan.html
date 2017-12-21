@@ -53,15 +53,11 @@
     </ion-item>
     
     <ion-item>
-        <img src="https://image.flaticon.com/icons/png/128/148/148752.png" width="60" height="60"/>
-        
-        <img src="https://freeiconshop.com/wp-content/uploads/edd/paper-rocket-flat.png" width="60" height="60"/>
-
-        <img src="http://www.myiconfinder.com/uploads/iconsets/128-128-d02328532122a358e4c3d755cd436c6c.png" width="60" height="60"/>   
+        <!--<figure [hidden]="statusnya!=0"><img  src="https://image.flaticon.com/icons/png/128/148/148752.png" width="60" height="60"/> <figcaption>Diproses</figcaption></figure>-->
+        <figure [hidden]="statusnya!=1"><img (click)="konfirmasi1()"src="https://freeiconshop.com/wp-content/uploads/edd/paper-rocket-flat.png" width="60" height="60"/> <figcaption>Dikirim</figcaption></figure>
+        <!--<figure [hidden]="statusnya!=2"><img src="http://www.myiconfinder.com/uploads/iconsets/128-128-d02328532122a358e4c3d755cd436c6c.png" width="60" height="60"/> <figcaption>>Selesai</figcaption></figure>-->
     </ion-item>
     
-    <ion-item>
-        <p>Diproses ... Dikirim ... Selesai</p>
-    </ion-item>  
+   
     
 </ion-content>

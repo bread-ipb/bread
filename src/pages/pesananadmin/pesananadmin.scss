@@ -6,4 +6,12 @@ page-pesananadmin {
     ion-card-header {
         font-weight: bold;
     }
+    .belumDibayar{
+		background-color: red;
+	}
+
+	.sudahDikirim{
+		background-color: green;
+	}	
+
 }

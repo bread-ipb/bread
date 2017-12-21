@@ -22,9 +22,11 @@ export class DetailpesananPage {
   itemsaya:any;
   usernya:any;
   namauser:any;
+  statusnya:any;
   constructor(public navCtrl: NavController,private fireauth: AngularFireAuth,public db:AngularFireDatabase,  public navParams: NavParams) {
     this.trans=this.navParams.get('detailtrans');
     this.itemsaya=this.navParams.get('itemku');
+    this.statusnya=this.navParams.get('statusnya');
     this.usernya=this.itemsaya.punyauser
     var user = this.fireauth.auth.currentUser; 
     this.db.list('/user').subscribe(data => {
@@ -44,6 +46,11 @@ export class DetailpesananPage {
     });
      
 
+  }
+  konfirmasi1(){
+    this.db.object('/transaksi/'+this.itemsaya.$key).update({
+      status:2
+    })
   }
   ionViewDidLoad() {
     
