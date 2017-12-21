@@ -27976,6 +27976,14 @@ page-detail-transaksi .belumDibayar {
   background-color: red;
 }
 
+page-pesananadmin .scroll-content {
+  background-color: #f4f4f4;
+}
+
+page-pesananadmin ion-card-header {
+  font-weight: bold;
+}
+
 page-profil .EditProfil {
   background-color: #fff;
 }
